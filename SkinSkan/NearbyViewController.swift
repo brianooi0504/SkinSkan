@@ -44,7 +44,7 @@ class NearbyViewController: UIViewController, UITableViewDataSource {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "NearbySegue" {
-            if let destination = segue.destination as? NearbyDetailViewController {
+            if let destination = segue.destination as? NearbyDetailViewControllerNew {
                 destination.configure(dermatologist: dermatologists[dermatologistTableView.indexPathForSelectedRow!.row])
             }
         }

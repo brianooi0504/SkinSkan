@@ -21,6 +21,7 @@
 		0CDC93EE28DB7E80009E6E78 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC93ED28DB7E80009E6E78 /* HomeViewController.swift */; };
 		0CDC93F228DB814A009E6E78 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC93F128DB814A009E6E78 /* InformationViewController.swift */; };
 		0CDC93F628DB8182009E6E78 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC93F528DB8182009E6E78 /* ProfileViewController.swift */; };
+		0CFDAF1728DDF86E00EAA5E5 /* NearbyDetailViewControllerNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFDAF1628DDF86E00EAA5E5 /* NearbyDetailViewControllerNew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		0CDC93ED28DB7E80009E6E78 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0CDC93F128DB814A009E6E78 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		0CDC93F528DB8182009E6E78 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0CFDAF1628DDF86E00EAA5E5 /* NearbyDetailViewControllerNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyDetailViewControllerNew.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				0CDC93E728DB77A2009E6E78 /* Info.plist */,
 				0CAC1C2028DD9D3E00AB3592 /* Dermatologist.swift */,
 				0CAC1C2428DDA93E00AB3592 /* NearbyDetailViewController.swift */,
+				0CFDAF1628DDF86E00EAA5E5 /* NearbyDetailViewControllerNew.swift */,
 			);
 			path = SkinSkan;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				0CDC93EE28DB7E80009E6E78 /* HomeViewController.swift in Sources */,
 				0CAC1C2528DDA93E00AB3592 /* NearbyDetailViewController.swift in Sources */,
 				0C9DC15B28DC7A2900C49FD5 /* NearbyCell.swift in Sources */,
+				0CFDAF1728DDF86E00EAA5E5 /* NearbyDetailViewControllerNew.swift in Sources */,
 				0CDC93F628DB8182009E6E78 /* ProfileViewController.swift in Sources */,
 				0CDC93F228DB814A009E6E78 /* InformationViewController.swift in Sources */,
 				0CAC1C2328DDA1EC00AB3592 /* NearbyViewController.swift in Sources */,
