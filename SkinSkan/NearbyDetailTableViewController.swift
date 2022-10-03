@@ -10,30 +10,30 @@ import UIKit
 import MapKit
 import CoreLocation
 
-struct CellDataNew {
+struct CellData {
     var expanded: Bool
     var info: String
 }
 
-
-class NearbyDetailViewControllerNew: UITableViewController {
+class NearbyDetailTableViewController: UITableViewController {
     private var dermatologist: Dermatologist!
-    private let sectionLabels = ["How to get there", "Services offered", "Operating hours", "Doctors available", "Contacts", "Rating"]
+    private let sectionLabels = ["Name", "How to get there", "Operating hours", "Contacts", "Website", "Rating"]
     private var detailTableData: [CellData]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        detailTableData = [CellData(expanded: true, info: dermatologist.address),
-                           CellData(expanded: true, info: dermatologist.servicesOffered),
-                           CellData(expanded: true, info: dermatologist.fullOpHrs),
-                           CellData(expanded: true, info: dermatologist.doctors.joined(separator: ", ")),
-                           CellData(expanded: true, info: dermatologist.contacts.joined(separator: ", ")),
-                           CellData(expanded: true, info: String(dermatologist.rating))]
+        detailTableData = [CellData(expanded: true, info: dermatologist.title),
+                           CellData(expanded: true, info: dermatologist.address!),
+                           CellData(expanded: true, info: dermatologist.hours!.joined(separator: "\n")),
+                           CellData(expanded: true, info: dermatologist.contacts!),
+                           CellData(expanded: true, info: dermatologist.website!),
+                           CellData(expanded: true, info: String(dermatologist.rating) + " ★")]
 
         tableView.reloadData()
         
     }
+    
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
@@ -43,7 +43,7 @@ class NearbyDetailViewControllerNew: UITableViewController {
         button.backgroundColor = .yellow
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
 
-        button.addTarget(self, action: #selector(openMap), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleExpand), for: .touchUpInside)
 
         button.tag = section
 
@@ -51,8 +51,6 @@ class NearbyDetailViewControllerNew: UITableViewController {
     }
 
     @objc func handleExpand(button: UIButton) {
-        print("Button pressed")
-        
         let section = button.tag
         
         var indexPaths = [IndexPath]()
@@ -73,7 +71,6 @@ class NearbyDetailViewControllerNew: UITableViewController {
     
     func configure(dermatologist: Dermatologist) {
         self.dermatologist = dermatologist
-        self.title = dermatologist.title
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -103,32 +100,30 @@ class NearbyDetailViewControllerNew: UITableViewController {
         cell.textLabel?.text = detailTableData[indexPath.section].info
         return cell
     }
-
     
-    @objc func openMap(button: UIButton) {
-//        let address = detailTableData[0].info
-//        var latitude: Double?
-//        var longitude: Double?
-//
-//        let geoCoder = CLGeocoder()
-//        geoCoder.geocodeAddressString(address) { (placemarks, error) in
-//            let placemark = placemarks?.first
-//            latitude = placemark?.location?.coordinate.latitude
-//            longitude = placemark?.location?.coordinate.longitude
-////            else {
-//
-////            }
-//        }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        let section = indexPath.section
         
-        let latitude = 3.0672267
-        let longitude = 101.603841
+        if section == 1 && row == 0 {
+            openMap()
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
+    }
+    
+    @objc func openMap() {
+        let latitude = dermatologist.lat
+        let longitude = dermatologist.lng
         print("Lat: \(latitude), Lon: \(longitude)")
         
         let appleURL = "http://maps.apple.com/?daddr=\(latitude),\(longitude)"
         let googleURL = "comgooglemaps://?daddr=\(latitude),\(longitude)&directionsmode=driving"
         let wazeURL = "waze://?ll=\(latitude),\(longitude)&navigate=false"
 
-        let googleItem = ("Google Map", URL(string:googleURL)!)
+        let googleItem = ("Google Maps", URL(string:googleURL)!)
         let wazeItem = ("Waze", URL(string:wazeURL)!)
         var installedNavigationApps = [("Apple Maps", URL(string:appleURL)!)]
 
@@ -158,24 +153,7 @@ class NearbyDetailViewControllerNew: UITableViewController {
         let phoneURL: NSURL = URL(string: "TEL://\(phoneNumber)")! as NSURL
         UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
         
-        
     }
-    
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//      let region = regions[indexPath.row]
-//
-//      UIApplication.shared.open(region.phoneNumber.url) { success in
-//        if success {
-//          // ...
-//        } else if let cell = tableView.cellForRow(at: indexPath) {
-//          let menu = UIMenuController.shared
-//          menu.setTargetRect(cell.frame, in: tableView)
-//          menu.setMenuVisible(true, animated: true)
-//        } else {
-//          tableView.deselectRow(at: indexPath, animated: true)
-//        }
-//      }
-//    }
 
 }
 

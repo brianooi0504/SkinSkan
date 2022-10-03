@@ -10,14 +10,16 @@ import UIKit
 
 class NearbyCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var hoursLabel: UILabel!
     @IBOutlet var distanceLabel: UILabel!
+    @IBOutlet var ratingLabel: UILabel!
+    @IBOutlet var openingLabel: UILabel!
     
     private var dermatologist: Dermatologist!
     
     func configure(dermatologist: Dermatologist) {
         titleLabel.text = dermatologist.title
-        hoursLabel.text = dermatologist.hours
         distanceLabel.text = dermatologist.distance
+        ratingLabel.text = String(dermatologist.rating) + " ★"
+        openingLabel.text = dermatologist.openNow
     }
 }

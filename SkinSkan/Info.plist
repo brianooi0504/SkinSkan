@@ -2,15 +2,37 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleIdentifier</key>
-	<string>&lt;key&gt;LSApplicationQueriesSchemes&lt;/key&gt;
-&lt;array&gt;
-    &lt;string&gt;googlechromes&lt;/string&gt;
-    &lt;string&gt;comgooglemaps&lt;/string&gt;
-    &lt;string&gt;waze&lt;/string&gt;
-&lt;/array&gt;</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app uses your location to personalize your app experience</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app uses your location to personalize your app experience</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app requires access to the photo library.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app requires access to the camera.</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string></string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>comgooglemaps</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>waze</string>
+			</array>
+			<key>CFBundleURLName</key>
+			<string></string>
+		</dict>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
+		<key>UIApplicationSupportsTabbedSceneCollection</key>
+		<false/>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>
 		<key>UISceneConfigurations</key>

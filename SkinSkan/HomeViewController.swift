@@ -23,4 +23,10 @@ class HomeViewController: UIViewController {
         tabBarController?.selectedIndex = 1
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "TestSegue" {
+//            if let destination = segue.destination as? TestViewController {
+//            }
+        }
+    }
 }
