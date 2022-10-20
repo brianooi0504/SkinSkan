@@ -10,6 +10,8 @@ import Foundation
 class Dermatologist: Codable {
     var id: String
     var title: String
+    var number: Int
+    var numberedTitle: String
     var lat: Double
     var lng: Double
     var distance: String
@@ -20,9 +22,11 @@ class Dermatologist: Codable {
     var contacts: String? = ""
     var website: String? = ""
     
-    init(id: String, title: String, lat: Double, lng: Double, distance: String, rating: Double) {
+    init(id: String, title: String, number: Int, numberedTitle: String, lat: Double, lng: Double, distance: String, rating: Double) {
         self.id = id
         self.title = title
+        self.number = number
+        self.numberedTitle = numberedTitle
         self.lat = lat
         self.lng = lng
         self.distance = distance

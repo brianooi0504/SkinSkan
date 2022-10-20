@@ -17,6 +17,7 @@ class TestViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func selectImage(sender: UIButton) {
+//        showImagePickerControllerActionSheet()
         ImagePickerManager().pickImage(self){ image in
             self.chosenImage = image
             self.choosePhotoButton.setBackgroundImage(self.chosenImage, for: .normal)
@@ -24,14 +25,6 @@ class TestViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
     }
 
-    @IBAction func selectImage2(_ sender: UIBarButtonItem) {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let picker = UIImagePickerController()
-            picker.delegate = self
-            picker.sourceType = .photoLibrary
-            navigationController?.present(picker, animated: true, completion: nil)
-        }
-    }
 
     @IBAction func removeChosenPhoto() {
         self.chosenImage = nil
@@ -40,6 +33,39 @@ class TestViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
 }
+
+//extension TestViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+//
+//    func showImagePickerControllerActionSheet() {
+//        let photoLibraryAction = UIAlertAction(title: "Choose from library", style: .default) {
+//            (action) in self.showImagePickerController(sourceType: .photoLibrary)
+//        }
+//        let cameraAction = UIAlertAction(title: "Take from camera", style: .default) {
+//            (action) in self.showImagePickerController(sourceType: .camera)
+//        }
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+//
+//        AlertService.showAlert(style: .actionSheet, title: nil, message: nil, actions: [photoLibraryAction, cameraAction, cancelAction], completion: nil)
+//    }
+//
+//    func showImagePickerController(sourceType: UIImagePickerController.SourceType) {
+//        let imagePickerController = UIImagePickerController()
+//        imagePickerController.delegate = self
+//        imagePickerController.allowsEditing = true
+//        imagePickerController.sourceType = sourceType
+//        present(imagePickerController, animated: true, completion: nil)
+//    }
+//
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//
+//        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+//            self.chosenImage = editedImage
+//            choosePhotoButton.setBackgroundImage(self.chosenImage, for: .normal)
+//            choosePhotoButton.setTitle("", for: .normal)
+//        }
+//        dismiss(animated: true, completion: nil)
+//    }
+//}
 
 class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -80,6 +106,7 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
     func openCamera(){
         alert.dismiss(animated: true, completion: nil)
         if(UIImagePickerController .isSourceTypeAvailable(.camera)){
+            picker.allowsEditing = true
             picker.sourceType = .camera
             self.viewController!.present(picker, animated: true, completion: nil)
         } else {
@@ -94,6 +121,7 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
     }
     func openGallery(){
         alert.dismiss(animated: true, completion: nil)
+        picker.allowsEditing = true
         picker.sourceType = .photoLibrary
         self.viewController!.present(picker, animated: true, completion: nil)
     }
@@ -105,7 +133,7 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
-        guard let image = info[.originalImage] as? UIImage else {
+        guard let image = info[.editedImage] as? UIImage else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
         pickImageCallback?(image)

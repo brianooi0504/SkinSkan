@@ -20,3 +20,6 @@ class MyCustomHeaderView: UITableViewHeaderFooterView {
     
 }
 
+class InformationDetailCell: UITableViewCell {
+    
+}

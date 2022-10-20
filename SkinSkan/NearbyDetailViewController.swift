@@ -17,11 +17,6 @@ class NearbyDetailViewController: UIViewController {
         self.dermatologist = dermatologist
         self.title = dermatologist.title
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "NearbyDetailTableSegue" {

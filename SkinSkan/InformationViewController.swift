@@ -42,4 +42,13 @@ class InformationViewController: UITableViewController {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "InformationDetailSegue" {
+            if let destination = segue.destination as? InformationDetailViewController {
+                let selectedDisease: Disease = diseases[tableView.indexPathForSelectedRow!.row]
+                destination.configure(disease: selectedDisease)
+            }
+        }
+    }
+    
 }

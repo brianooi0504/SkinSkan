@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C177B9C28ED7D6D0092A835 /* InformationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C177B9B28ED7D6D0092A835 /* InformationDetailViewController.swift */; };
+		0C177B9E28ED7DA60092A835 /* InformationDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C177B9D28ED7DA60092A835 /* InformationDetailTableViewController.swift */; };
 		0C7DD6EA28EAC1250071AB78 /* Disease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7DD6E928EAC1250071AB78 /* Disease.swift */; };
 		0C9DC15B28DC7A2900C49FD5 /* NearbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9DC15A28DC7A2900C49FD5 /* NearbyCell.swift */; };
 		0CAC1C2128DD9D3E00AB3592 /* Dermatologist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC1C2028DD9D3E00AB3592 /* Dermatologist.swift */; };
 		0CAC1C2328DDA1EC00AB3592 /* NearbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC1C2228DDA1EC00AB3592 /* NearbyViewController.swift */; };
 		0CAC1C2528DDA93E00AB3592 /* NearbyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC1C2428DDA93E00AB3592 /* NearbyDetailViewController.swift */; };
 		0CAC1C2728DDADD900AB3592 /* NearbyDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC1C2628DDADD900AB3592 /* NearbyDetailCell.swift */; };
+		0CD04CF528FEFBF90056AC18 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD04CF428FEFBF90056AC18 /* AlertService.swift */; };
 		0CDA9ED928E3584D00DB37F0 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDA9ED828E3584D00DB37F0 /* TestViewController.swift */; };
 		0CDC93DA28DB779F009E6E78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC93D928DB779F009E6E78 /* AppDelegate.swift */; };
 		0CDC93DC28DB779F009E6E78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC93DB28DB779F009E6E78 /* SceneDelegate.swift */; };
@@ -27,12 +30,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0C7DD6E928EAC1250071AB78 /* Disease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Disease.swift; path = SkinSkan/Disease.swift; sourceTree = "<group>"; };
+		0C177B9B28ED7D6D0092A835 /* InformationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailViewController.swift; sourceTree = "<group>"; };
+		0C177B9D28ED7DA60092A835 /* InformationDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailTableViewController.swift; sourceTree = "<group>"; };
+		0C7DD6E928EAC1250071AB78 /* Disease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disease.swift; sourceTree = "<group>"; };
 		0C9DC15A28DC7A2900C49FD5 /* NearbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyCell.swift; sourceTree = "<group>"; };
 		0CAC1C2028DD9D3E00AB3592 /* Dermatologist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dermatologist.swift; sourceTree = "<group>"; };
 		0CAC1C2228DDA1EC00AB3592 /* NearbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyViewController.swift; sourceTree = "<group>"; };
 		0CAC1C2428DDA93E00AB3592 /* NearbyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyDetailViewController.swift; sourceTree = "<group>"; };
 		0CAC1C2628DDADD900AB3592 /* NearbyDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyDetailCell.swift; sourceTree = "<group>"; };
+		0CD04CF428FEFBF90056AC18 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		0CDA9ED828E3584D00DB37F0 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		0CDC93D628DB779F009E6E78 /* SkinSkan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkinSkan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CDC93D928DB779F009E6E78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +68,6 @@
 		0CDC93CD28DB779F009E6E78 = {
 			isa = PBXGroup;
 			children = (
-				0C7DD6E928EAC1250071AB78 /* Disease.swift */,
 				0CDC93D828DB779F009E6E78 /* SkinSkan */,
 				0CDC93D728DB779F009E6E78 /* Products */,
 			);
@@ -79,8 +84,10 @@
 		0CDC93D828DB779F009E6E78 /* SkinSkan */ = {
 			isa = PBXGroup;
 			children = (
+				0C7DD6E928EAC1250071AB78 /* Disease.swift */,
 				0CDC93D928DB779F009E6E78 /* AppDelegate.swift */,
 				0CDC93DB28DB779F009E6E78 /* SceneDelegate.swift */,
+				0CD04CF428FEFBF90056AC18 /* AlertService.swift */,
 				0CDC93DD28DB779F009E6E78 /* ViewController.swift */,
 				0CDC93ED28DB7E80009E6E78 /* HomeViewController.swift */,
 				0CDC93F128DB814A009E6E78 /* InformationViewController.swift */,
@@ -96,6 +103,8 @@
 				0CAC1C2428DDA93E00AB3592 /* NearbyDetailViewController.swift */,
 				0CFDAF1628DDF86E00EAA5E5 /* NearbyDetailTableViewController.swift */,
 				0CDA9ED828E3584D00DB37F0 /* TestViewController.swift */,
+				0C177B9B28ED7D6D0092A835 /* InformationDetailViewController.swift */,
+				0C177B9D28ED7DA60092A835 /* InformationDetailTableViewController.swift */,
 			);
 			path = SkinSkan;
 			sourceTree = "<group>";
@@ -176,6 +185,7 @@
 				0CDC93DA28DB779F009E6E78 /* AppDelegate.swift in Sources */,
 				0CAC1C2728DDADD900AB3592 /* NearbyDetailCell.swift in Sources */,
 				0CDC93DC28DB779F009E6E78 /* SceneDelegate.swift in Sources */,
+				0C177B9E28ED7DA60092A835 /* InformationDetailTableViewController.swift in Sources */,
 				0CDC93EE28DB7E80009E6E78 /* HomeViewController.swift in Sources */,
 				0CDA9ED928E3584D00DB37F0 /* TestViewController.swift in Sources */,
 				0CAC1C2528DDA93E00AB3592 /* NearbyDetailViewController.swift in Sources */,
@@ -183,8 +193,10 @@
 				0CFDAF1728DDF86E00EAA5E5 /* NearbyDetailTableViewController.swift in Sources */,
 				0CDC93F628DB8182009E6E78 /* ProfileViewController.swift in Sources */,
 				0CDC93F228DB814A009E6E78 /* InformationViewController.swift in Sources */,
+				0CD04CF528FEFBF90056AC18 /* AlertService.swift in Sources */,
 				0CAC1C2328DDA1EC00AB3592 /* NearbyViewController.swift in Sources */,
 				0CAC1C2128DD9D3E00AB3592 /* Dermatologist.swift in Sources */,
+				0C177B9C28ED7D6D0092A835 /* InformationDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,11 +347,15 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SkinSkan/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to the camera.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app uses your location to personalize your app experience";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to personalize your app experience";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to the photo library.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -364,11 +380,15 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SkinSkan/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to the camera.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app uses your location to personalize your app experience";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to personalize your app experience";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to the photo library.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
