@@ -10,7 +10,16 @@ import UIKit
 
 class TestViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet var choosePhotoButton: UIButton!
+    @IBOutlet var startTestButton: UIButton!
     var chosenImage: UIImage?
+
+    /// A predictor instance that uses Vision and Core ML to generate prediction strings from a photo.
+    let imagePredictor = ImageClassifier()
+
+    /// The largest number of predictions the main view controller displays the user.
+    let predictionsToShow = 2
+    
+    var predictionResult: String?
     
     override func viewDidLoad() {
         self.choosePhotoButton.configuration?.cornerStyle = .dynamic
@@ -22,9 +31,12 @@ class TestViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             self.chosenImage = image
             self.choosePhotoButton.setBackgroundImage(self.chosenImage, for: .normal)
             self.choosePhotoButton.setTitle("", for: .normal)
+            
+            DispatchQueue.global(qos: .userInitiated).async {
+                self.classifyImage(image)
+            }
         }
     }
-
 
     @IBAction func removeChosenPhoto() {
         self.chosenImage = nil
@@ -32,40 +44,17 @@ class TestViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         self.choosePhotoButton.setTitle("Select Image", for: .normal)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ResultSegue" {
+            let destination = segue.destination as! ResultViewController
+            if let chosenImage = self.chosenImage {
+                if let predictionResult = self.predictionResult {
+                    destination.configure(chosenImage: chosenImage, predictionResult: predictionResult)
+                }
+            }
+        }
+    }
 }
-
-//extension TestViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-//
-//    func showImagePickerControllerActionSheet() {
-//        let photoLibraryAction = UIAlertAction(title: "Choose from library", style: .default) {
-//            (action) in self.showImagePickerController(sourceType: .photoLibrary)
-//        }
-//        let cameraAction = UIAlertAction(title: "Take from camera", style: .default) {
-//            (action) in self.showImagePickerController(sourceType: .camera)
-//        }
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-//
-//        AlertService.showAlert(style: .actionSheet, title: nil, message: nil, actions: [photoLibraryAction, cameraAction, cancelAction], completion: nil)
-//    }
-//
-//    func showImagePickerController(sourceType: UIImagePickerController.SourceType) {
-//        let imagePickerController = UIImagePickerController()
-//        imagePickerController.delegate = self
-//        imagePickerController.allowsEditing = true
-//        imagePickerController.sourceType = sourceType
-//        present(imagePickerController, animated: true, completion: nil)
-//    }
-//
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//
-//        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-//            self.chosenImage = editedImage
-//            choosePhotoButton.setBackgroundImage(self.chosenImage, for: .normal)
-//            choosePhotoButton.setTitle("", for: .normal)
-//        }
-//        dismiss(animated: true, completion: nil)
-//    }
-//}
 
 class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -140,4 +129,53 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
     }
 
 }
+
+extension TestViewController {
+    
+    // MARK: Image prediction methods
+    /// Sends a photo to the Image Predictor to get a prediction of its content.
+    /// - Parameter image: A photo.
+    private func classifyImage(_ image: UIImage) {
+        do {
+            try self.imagePredictor.makePredictions(for: image,
+                                                    completionHandler: imagePredictionHandler)
+        } catch {
+            print("Vision was unable to make a prediction...\n\n\(error.localizedDescription)")
+        }
+    }
+
+    /// The method the Image Predictor calls when its image classifier model generates a prediction.
+    /// - Parameter predictions: An array of predictions.
+    /// - Tag: imagePredictionHandler
+    private func imagePredictionHandler(_ predictions: [ImageClassifier.Prediction]?) {
+        guard let predictions = predictions else {
+            return
+        }
+
+        let formattedPredictions = formatPredictions(predictions)
+
+        let predictionString = formattedPredictions.joined(separator: "\n")
+        self.predictionResult = predictionString
+    }
+
+    /// Converts a prediction's observations into human-readable strings.
+    /// - Parameter observations: The classification observations from a Vision request.
+    /// - Tag: formatPredictions
+    private func formatPredictions(_ predictions: [ImageClassifier.Prediction]) -> [String] {
+        // Vision sorts the classifications in descending confidence order.
+        let topPredictions: [String] = predictions.prefix(predictionsToShow).map { prediction in
+            var name = prediction.classification
+
+            // For classifications with more than one name, keep the one before the first comma.
+            if let firstComma = name.firstIndex(of: ",") {
+                name = String(name.prefix(upTo: firstComma))
+            }
+
+            return "\(name) - \(prediction.confidencePercentage)%"
+        }
+
+        return topPredictions
+    }
+}
+
 

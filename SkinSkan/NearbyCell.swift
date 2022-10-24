@@ -17,9 +17,16 @@ class NearbyCell: UITableViewCell {
     private var dermatologist: Dermatologist!
     
     func configure(dermatologist: Dermatologist) {
+        let distance = dermatologist.distance
+        
         titleLabel.text = dermatologist.title
-        distanceLabel.text = dermatologist.distance
         ratingLabel.text = String(dermatologist.rating) + " ★"
         openingLabel.text = dermatologist.openNow
+        
+        if distance < 1000 {
+            distanceLabel.text = String(format:"%d m", distance)
+        } else {
+            distanceLabel.text = String(format:"%.2f km", Double(distance)/1000)
+        }
     }
 }

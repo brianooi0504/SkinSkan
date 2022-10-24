@@ -108,6 +108,14 @@ class NearbyDetailTableViewController: UITableViewController {
         if section == 1 && row == 0 {
             openMap()
         }
+        
+        if section == 3 {
+            phoneCall()
+        }
+        
+        if section == 4 {
+            openBrowser()
+        }
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -117,7 +125,6 @@ class NearbyDetailTableViewController: UITableViewController {
     @objc func openMap() {
         let latitude = dermatologist.lat
         let longitude = dermatologist.lng
-        print("Lat: \(latitude), Lon: \(longitude)")
         
         let appleURL = "http://maps.apple.com/?daddr=\(latitude),\(longitude)"
         let googleURL = "comgooglemaps://?daddr=\(latitude),\(longitude)&directionsmode=driving"
@@ -147,12 +154,24 @@ class NearbyDetailTableViewController: UITableViewController {
         present(alert, animated: true)
     }
     
-    @objc func phoneCall(button: UIButton) {
-        let phoneNumber = detailTableData[4].info
+    @objc func phoneCall() {
+        let phoneNumber = detailTableData[3].info
         
-        let phoneURL: NSURL = URL(string: "TEL://\(phoneNumber)")! as NSURL
-        UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
+        if phoneNumber != "N/A" {
+            let phoneURL: NSURL = URL(string: "TEL://\(phoneNumber.filter("0123456789".contains))")! as NSURL
+            UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
+        }
         
+    }
+    
+    @objc func openBrowser() {
+        let website = detailTableData[4].info
+        
+        if website != "N/A" {
+            if let url = URL(string: website) {
+                UIApplication.shared.open(url)
+            }
+        }
     }
 
 }

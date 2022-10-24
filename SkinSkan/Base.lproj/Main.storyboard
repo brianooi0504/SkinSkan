@@ -79,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxO-bF-JPb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1097" y="-610"/>
+            <point key="canvasLocation" x="-1897" y="-597"/>
         </scene>
         <!--Information-->
         <scene sceneID="0e4-qV-jwr">
@@ -139,6 +139,9 @@
                                 <buttonConfiguration key="configuration" style="gray" title="Start test" cornerStyle="medium" titleAlignment="center">
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="qot-Td-j3M" kind="show" identifier="ResultSegue" id="Q3k-4i-IgE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUy-RJ-qB8">
                                 <rect key="frame" x="100" y="525" width="190" height="42.333333333333371"/>
@@ -185,11 +188,54 @@
                     <navigationItem key="navigationItem" title="Start a test" id="teX-8d-Q1c"/>
                     <connections>
                         <outlet property="choosePhotoButton" destination="UwT-uU-wQg" id="Hyy-hi-WP5"/>
+                        <outlet property="startTestButton" destination="2Gp-jP-gMz" id="8Cr-KG-MWN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zQq-jR-ebu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-300" y="-609.24170616113736"/>
+            <point key="canvasLocation" x="-1098" y="-596"/>
+        </scene>
+        <!--Results-->
+        <scene sceneID="HL9-6M-8B9">
+            <objects>
+                <viewController id="qot-Td-j3M" customClass="ResultViewController" customModule="SkinSkan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EQ1-S7-aVS">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Nh-ob-bPS">
+                                <rect key="frame" x="30" y="535" width="330" height="28.666666666666629"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qJQ-YI-lp6">
+                                <rect key="frame" x="28" y="171" width="334" height="334"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qJQ-YI-lp6" secondAttribute="height" multiplier="1:1" id="arA-qL-mjx"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GAp-dL-goA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qJQ-YI-lp6" firstAttribute="leading" secondItem="GAp-dL-goA" secondAttribute="leading" constant="28" id="1Ck-Gf-An3"/>
+                            <constraint firstItem="qJQ-YI-lp6" firstAttribute="top" secondItem="GAp-dL-goA" secondAttribute="top" constant="28" id="81W-bZ-hXQ"/>
+                            <constraint firstItem="GAp-dL-goA" firstAttribute="trailing" secondItem="1Nh-ob-bPS" secondAttribute="trailing" constant="30" id="9B1-X5-OUt"/>
+                            <constraint firstItem="1Nh-ob-bPS" firstAttribute="leading" secondItem="GAp-dL-goA" secondAttribute="leading" constant="30" id="IhZ-Fs-Z17"/>
+                            <constraint firstItem="1Nh-ob-bPS" firstAttribute="top" secondItem="qJQ-YI-lp6" secondAttribute="bottom" constant="30" id="UaS-2a-obK"/>
+                            <constraint firstItem="GAp-dL-goA" firstAttribute="trailing" secondItem="qJQ-YI-lp6" secondAttribute="trailing" constant="28" id="cAE-9I-JOB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Results" id="M4u-Cz-2RR"/>
+                    <connections>
+                        <outlet property="photoView" destination="qJQ-YI-lp6" id="x2f-96-KIJ"/>
+                        <outlet property="resultLabel" destination="1Nh-ob-bPS" id="1Mx-0V-bfE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XQP-Dp-Gp4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-300" y="-596.44549763033172"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Maa-sh-AZq">
@@ -209,7 +255,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U81-f6-0u8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="720" y="-424"/>
+            <point key="canvasLocation" x="708" y="-424"/>
         </scene>
         <!--Profile-->
         <scene sceneID="uKV-aE-eXm">
@@ -225,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGt-J5-KsB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2806" y="-424"/>
+            <point key="canvasLocation" x="2485" y="-597"/>
         </scene>
         <!--Nearby-->
         <scene sceneID="U7k-Nv-ITi">
@@ -340,7 +386,13 @@
                             <constraint firstItem="XyV-83-d66" firstAttribute="top" secondItem="1o5-KE-MXx" secondAttribute="bottom" constant="8" symbolic="YES" id="uHq-Za-Acx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Nearby" largeTitleDisplayMode="always" id="pgx-WW-GjT"/>
+                    <navigationItem key="navigationItem" title="Nearby" largeTitleDisplayMode="always" id="pgx-WW-GjT">
+                        <barButtonItem key="rightBarButtonItem" title="Re-center" image="location.fill.viewfinder" catalog="system" id="GaX-Mc-gpy">
+                            <connections>
+                                <action selector="reCenterLoc:" destination="Q6K-OB-vqJ" id="EGE-Yi-aV8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dermatologistTableView" destination="XyV-83-d66" id="jsp-Db-bPg"/>
                         <outlet property="nearbyMapView" destination="1o5-KE-MXx" id="PZz-Vq-ph2"/>
@@ -348,7 +400,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8x-8m-fAA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2208" y="348"/>
+            <point key="canvasLocation" x="2485" y="373"/>
         </scene>
         <!--Nearby Detail View Controller-->
         <scene sceneID="I5Q-6v-jzv">
@@ -404,7 +456,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sm6-3k-Fb4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3137" y="1036"/>
+            <point key="canvasLocation" x="3265" y="1091"/>
         </scene>
         <!--Nearby Detail Table View Controller-->
         <scene sceneID="2Wg-qQ-0w7">
@@ -441,7 +493,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xN4-dD-TZU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3938" y="1035"/>
+            <point key="canvasLocation" x="4040" y="1091"/>
         </scene>
         <!--Home-->
         <scene sceneID="gBU-kp-miy">
@@ -460,7 +512,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Fz-CC-1tf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1892" y="-610"/>
+            <point key="canvasLocation" x="-2691" y="-597"/>
         </scene>
         <!--Information-->
         <scene sceneID="h7y-fU-VOt">
@@ -498,7 +550,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Fx-3x-RsO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1278" y="348"/>
+            <point key="canvasLocation" x="1695" y="373"/>
         </scene>
         <!--Profile-->
         <scene sceneID="dhc-Pj-YeF">
@@ -517,7 +569,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aaw-mL-3If" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1877" y="-424"/>
+            <point key="canvasLocation" x="1694" y="-596"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dGu-tJ-vUq">
@@ -535,7 +587,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPV-az-uwM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2208" y="1036"/>
+            <point key="canvasLocation" x="2485" y="1091"/>
         </scene>
         <!--Information Detail View Controller-->
         <scene sceneID="q7R-mk-mAv">
@@ -632,6 +684,7 @@
         <image name="books.vertical.fill" catalog="system" width="128" height="110"/>
         <image name="camera.fill" catalog="system" width="128" height="93"/>
         <image name="doc.text.below.ecg.fill" catalog="system" width="115" height="128"/>
+        <image name="location.fill.viewfinder" catalog="system" width="128" height="115"/>
         <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="trash.fill" catalog="system" width="119" height="128"/>

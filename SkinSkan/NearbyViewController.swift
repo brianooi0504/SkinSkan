@@ -16,11 +16,13 @@ class NearbyViewController: UIViewController, UITableViewDataSource, UITableView
     private var dermatologists: [Dermatologist] = []
     private var dermatologistTitles = [String: Int]()
     private var mapMarkers: [MKAnnotation] = []
-    private var latitude: String?
-    private var longitude: String?
+    private var latitude: Double?
+    private var longitude: Double?
     private let apiKey = "AIzaSyDK2NejXEQ3hQj-M627SpiqIHhrS-KvS-k"
-    private var mapSearchURL: String?
+    private var mapSearchURL: String!
     var locationManager = CLLocationManager()
+    private var currentLocation: CLLocation!
+    private var currentLocation2D: CLLocationCoordinate2D!
     private var regionRadius: CLLocationDistance = 5000
 
     override func viewDidLoad() {
@@ -79,8 +81,11 @@ class NearbyViewController: UIViewController, UITableViewDataSource, UITableView
             do {
                 let dermResult = try JSONDecoder().decode(DermResult.self, from: data)
                 
-                for (i, result) in dermResult.results.enumerated() {
-                    let newDerm = Dermatologist(id: result.place_id, title: result.name, number: i, numberedTitle: String(i) + " " + result.name, lat: result.geometry.location.lat, lng: result.geometry.location.lng, distance: result.name, rating: result.rating)
+                for result in dermResult.results {
+                    let lat = result.geometry.location.lat
+                    let lng = result.geometry.location.lng
+                    
+                    let newDerm = Dermatologist(id: result.place_id, title: result.name, lat: lat, lng: lng, distance: getDistance(myLoc: currentLocation, locLat: lat, locLong: lng), rating: result.rating)
                     
                     let markerLocation = CLLocationCoordinate2DMake(CLLocationDegrees(result.geometry.location.lat), CLLocationDegrees(result.geometry.location.lng))
                     let newMarker = MKPointAnnotation()
@@ -92,6 +97,12 @@ class NearbyViewController: UIViewController, UITableViewDataSource, UITableView
                     self.getDetailedData(url: URL(string: "https://maps.googleapis.com/maps/api/place/details/json?fields=formatted_address%2Cformatted_phone_number%2Copening_hours%2Cwebsite&place_id=\(result.place_id)&key=\(self.apiKey)"), derm: newDerm)
 
                     self.dermatologists.append(newDerm)
+                }
+                
+                self.dermatologists.sort(by: ({$0.distance < $1.distance}))
+                
+                for (i, derm) in self.dermatologists.enumerated() {
+                    derm.number = i
                 }
                 
                 DispatchQueue.main.async {
@@ -133,32 +144,38 @@ class NearbyViewController: UIViewController, UITableViewDataSource, UITableView
             }
         }.resume()
     }
-
 }
 
 extension NearbyViewController: CLLocationManagerDelegate, MKMapViewDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]
     ) {
+        manager.stopUpdatingLocation()
+        manager.delegate = nil
+        
         if let location = locations.first {
-            manager.stopUpdatingLocation()
-            let latDouble = Double(location.coordinate.latitude)
-            let longDouble = Double(location.coordinate.longitude)
-            latitude = String(latDouble)
-            longitude = String(longDouble)
+            latitude = Double(location.coordinate.latitude)
+            longitude = Double(location.coordinate.longitude)
+            currentLocation = CLLocation(latitude: latitude!, longitude: longitude!)
+            currentLocation2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
             
-            mapSearchURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?keyword=dermatologist&location=\( latitude!)%2C\(longitude!)&radius=\(String(regionRadius))&type=doctor&key=\(apiKey)"
+            mapSearchURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?keyword=dermatologist&location=\( String(latitude!))%2C\(String(longitude!))&radius=\(String(regionRadius))&type=doctor&key=\(apiKey)"
             
-            getNearbyData(url: URL(string: mapSearchURL!))
+//            mapSearchURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?keyword=dermatologist&location=\( String(latitude!))%2C\(String(longitude!))&rankby=distance&type=doctor&key=\(apiKey)"
             
-            let currentLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+            getNearbyData(url: URL(string: mapSearchURL))
+
+            
             let currentMarker = MKPointAnnotation()
-            currentMarker.coordinate = currentLocation
+            currentMarker.coordinate = currentLocation2D
             currentMarker.title = "My Position"
             nearbyMapView.addAnnotation(currentMarker)
             
-            nearbyMapView.setCenter(currentLocation, animated: true)
+            nearbyMapView.setCenter(currentLocation2D, animated: true)
             
             nearbyMapView.showAnnotations(mapMarkers, animated: true)
+            
+            let annotationIndex = getAnnotationIndex(dermName: "My Position", annotations: nearbyMapView.annotations)
+            nearbyMapView.selectAnnotation(nearbyMapView.annotations[annotationIndex], animated: true)
             
             let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
             nearbyMapView.setRegion(coordinateRegion, animated: true)
@@ -172,7 +189,7 @@ extension NearbyViewController: CLLocationManagerDelegate, MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        var identifier = "Placemark"
+        var identifier = ""
         var tag = 9999
         
         if annotation.title == "My Position" {
@@ -199,7 +216,7 @@ extension NearbyViewController: CLLocationManagerDelegate, MKMapViewDelegate {
         }
         
         if annotation.title == "My Position" {
-            annotationView?.image = UIImage(systemName: "house.circle.fill")?.withRenderingMode(.alwaysOriginal)
+            annotationView?.image = UIImage(systemName: "house.circle.fill")?.withRenderingMode(.alwaysTemplate)
         }
         
         return annotationView
@@ -218,10 +235,17 @@ extension NearbyViewController: CLLocationManagerDelegate, MKMapViewDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func reCenterLoc(_ sender: UIBarButtonItem) {
+        nearbyMapView.setCenter(currentLocation2D, animated: true)
+        
+        let annotationIndex = getAnnotationIndex(dermName: "My Position", annotations: nearbyMapView.annotations)
+        nearbyMapView.selectAnnotation(nearbyMapView.annotations[annotationIndex], animated: true)
+    }
+    
     func getButtonTag(dermName: String) -> Int {
         for derm in dermatologists {
             if derm.title == dermName {
-                return derm.number
+                return derm.number!
             }
         }
         
@@ -236,5 +260,12 @@ extension NearbyViewController: CLLocationManagerDelegate, MKMapViewDelegate {
         }
         
         return 0
+    }
+    
+    func getDistance(myLoc: CLLocation, locLat: Double, locLong: Double) -> Int {
+        let loc = CLLocation(latitude: locLat, longitude: locLong)
+        let distance = myLoc.distance(from: loc)
+        
+        return Int(distance)
     }
 }
