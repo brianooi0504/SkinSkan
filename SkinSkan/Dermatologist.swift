@@ -6,26 +6,27 @@
 //
 
 import Foundation
+import CoreLocation
+import UIKit
 
-class Dermatologist: Codable {
+class Dermatologist {
     var id: String
     var title: String
-    var lat: Double
-    var lng: Double
+    var location: CLLocation
     var distance: Int
     var rating: Double
-    var number: Int? = 0
-    var hours: [String]? = []
-    var openNow: String? = ""
-    var address: String? = ""
-    var contacts: String? = ""
-    var website: String? = ""
+    var number: Int = 0
+    var hours: [String] = ["N/A"]
+    var openNow: String = "-"
+    var address: String = "N/A"
+    var contacts: String = "N/A"
+    var website: String = "N/A"
+    var photos: [UIImage] = []
     
-    init(id: String, title: String, lat: Double, lng: Double, distance: Int, rating: Double) {
+    init(id: String, title: String, location: CLLocation, distance: Int, rating: Double) {
         self.id = id
         self.title = title
-        self.lat = lat
-        self.lng = lng
+        self.location = location
         self.distance = distance
         self.rating = rating
     }
@@ -36,6 +37,10 @@ class Dermatologist: Codable {
         self.address = address
         self.contacts = contacts
         self.website = website
+    }
+    
+    func addPhotos(photo: UIImage) {
+        self.photos.append(photo)
     }
 }
 
@@ -69,7 +74,12 @@ struct DetailResult: Codable {
     let formatted_address: String?
     let formatted_phone_number: String?
     let opening_hours: Opening?
+    let photos: [Photo]?
     let website: String?
+}
+
+struct Photo: Codable {
+    let photo_reference: String
 }
 
 struct Opening: Codable {

@@ -22,6 +22,7 @@ class TestViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     var predictionResult: String?
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         self.choosePhotoButton.configuration?.cornerStyle = .dynamic
     }
     
@@ -47,10 +48,8 @@ class TestViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ResultSegue" {
             let destination = segue.destination as! ResultViewController
-            if let chosenImage = self.chosenImage {
-                if let predictionResult = self.predictionResult {
-                    destination.configure(chosenImage: chosenImage, predictionResult: predictionResult)
-                }
+            if let chosenImage = self.chosenImage, let predictionResult = self.predictionResult {
+                destination.configure(chosenImage: chosenImage, predictionResult: predictionResult)
             }
         }
     }

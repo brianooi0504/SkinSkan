@@ -8,14 +8,13 @@
 import Foundation
 import UIKit
 
-//PLACES API = "AIzaSyCVj3pN9drA9QdjGh0HxbQ94LzVyBFJy8U"
-
 class HomeViewController: UIViewController {
     @IBOutlet var testButton: UIButton!
     @IBOutlet var historyButton: UIButton!
     @IBOutlet var infoButton: UIButton!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         title = "Welcome!"
     }
     

@@ -11,7 +11,7 @@ import UIKit
 class InformationViewController: UITableViewController {
     private var diseases: [Disease] =
     [Disease(name: "Eczema (Atopic Dermatitis)", desc: nil, symptom: nil, treatment: nil),
-     Disease(name: "Contact Dermatitis", desc: nil, symptom: nil, treatment: nil),
+    Disease(name: "Contact Dermatitis", desc: nil, symptom: nil, treatment: nil),
     Disease(name: "Hives (Urticaria)", desc: nil, symptom: nil, treatment: nil),
     Disease(name: "Psoriasis", desc: nil, symptom: nil, treatment: nil),
     Disease(name: "Ringworm (Tinea Corporis)", desc: nil, symptom: nil, treatment: nil),
@@ -44,8 +44,11 @@ class InformationViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "InformationDetailSegue" {
-            if let destination = segue.destination as? InformationDetailViewController {
-                let selectedDisease: Disease = diseases[tableView.indexPathForSelectedRow!.row]
+            if let destination = segue.destination as? InformationDetailViewController,
+               let selectedCell = sender as? UITableViewCell,
+               let indexPath = tableView.indexPath(for: selectedCell) {
+                let rowIndex = indexPath.row
+                let selectedDisease: Disease = diseases[rowIndex]
                 destination.configure(disease: selectedDisease)
             }
         }

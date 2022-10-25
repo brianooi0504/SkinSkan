@@ -8,6 +8,11 @@
 import Foundation
 import UIKit
 
+struct DetailCellData {
+    var expanded: Bool
+    var info: String
+}
+
 class NearbyDetailCell: UITableViewCell {
     
 }

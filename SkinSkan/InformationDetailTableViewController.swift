@@ -11,15 +11,15 @@ import UIKit
 class InformationDetailTableViewController: UITableViewController {
     private var disease: Disease!
     private let sectionLabels = ["Name", "Description", "Symptoms", "Treatments"]
-    private var detailTableData: [CellData]!
+    private var detailTableData: [DetailCellData]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        detailTableData = [CellData(expanded: true, info: disease.name),
-                           CellData(expanded: true, info: " "),
-                           CellData(expanded: true, info: " "),
-                           CellData(expanded: true, info: " ")]
+        detailTableData = [DetailCellData(expanded: true, info: disease.name),
+                           DetailCellData(expanded: false, info: " "),
+                           DetailCellData(expanded: false, info: " "),
+                           DetailCellData(expanded: false, info: " ")]
 
         tableView.reloadData()
     }

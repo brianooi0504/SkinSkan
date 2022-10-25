@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C0178EC290810D700E37847 /* NearbyDetailImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0178EB290810D700E37847 /* NearbyDetailImageCollectionViewCell.swift */; };
 		0C177B9C28ED7D6D0092A835 /* InformationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C177B9B28ED7D6D0092A835 /* InformationDetailViewController.swift */; };
 		0C177B9E28ED7DA60092A835 /* InformationDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C177B9D28ED7DA60092A835 /* InformationDetailTableViewController.swift */; };
 		0C234CE42903FCBA00BA08E3 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C234CE32903FCBA00BA08E3 /* ResultViewController.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C0178EB290810D700E37847 /* NearbyDetailImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyDetailImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		0C177B9B28ED7D6D0092A835 /* InformationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailViewController.swift; sourceTree = "<group>"; };
 		0C177B9D28ED7DA60092A835 /* InformationDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailTableViewController.swift; sourceTree = "<group>"; };
 		0C234CE32903FCBA00BA08E3 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				0CDC93E228DB77A2009E6E78 /* Assets.xcassets */,
+				0CDC93DB28DB779F009E6E78 /* SceneDelegate.swift */,
 				0CDC93E728DB77A2009E6E78 /* Info.plist */,
 				0CDC93E428DB77A2009E6E78 /* LaunchScreen.storyboard */,
 				0CDC93DF28DB779F009E6E78 /* Main.storyboard */,
@@ -99,19 +102,19 @@
 				0CDC93D928DB779F009E6E78 /* AppDelegate.swift */,
 				0CAC1C2028DD9D3E00AB3592 /* Dermatologist.swift */,
 				0C7DD6E928EAC1250071AB78 /* Disease.swift */,
-				0CDC93ED28DB7E80009E6E78 /* HomeViewController.swift */,
 				0C234CE72904086C00BA08E3 /* ImageClassifier.swift */,
+				0C9DC15A28DC7A2900C49FD5 /* NearbyCell.swift */,
+				0CAC1C2628DDADD900AB3592 /* NearbyDetailCell.swift */,
+				0C0178EB290810D700E37847 /* NearbyDetailImageCollectionViewCell.swift */,
+				0CDC93ED28DB7E80009E6E78 /* HomeViewController.swift */,
 				0C177B9D28ED7DA60092A835 /* InformationDetailTableViewController.swift */,
 				0C177B9B28ED7D6D0092A835 /* InformationDetailViewController.swift */,
 				0CDC93F128DB814A009E6E78 /* InformationViewController.swift */,
-				0C9DC15A28DC7A2900C49FD5 /* NearbyCell.swift */,
-				0CAC1C2628DDADD900AB3592 /* NearbyDetailCell.swift */,
 				0CFDAF1628DDF86E00EAA5E5 /* NearbyDetailTableViewController.swift */,
 				0CAC1C2428DDA93E00AB3592 /* NearbyDetailViewController.swift */,
 				0CAC1C2228DDA1EC00AB3592 /* NearbyViewController.swift */,
 				0CDC93F528DB8182009E6E78 /* ProfileViewController.swift */,
 				0C234CE32903FCBA00BA08E3 /* ResultViewController.swift */,
-				0CDC93DB28DB779F009E6E78 /* SceneDelegate.swift */,
 				0CDA9ED828E3584D00DB37F0 /* TestViewController.swift */,
 				0CDC93DD28DB779F009E6E78 /* ViewController.swift */,
 			);
@@ -202,6 +205,7 @@
 				0C9DC15B28DC7A2900C49FD5 /* NearbyCell.swift in Sources */,
 				0CFDAF1728DDF86E00EAA5E5 /* NearbyDetailTableViewController.swift in Sources */,
 				0C234CE82904086C00BA08E3 /* ImageClassifier.swift in Sources */,
+				0C0178EC290810D700E37847 /* NearbyDetailImageCollectionViewCell.swift in Sources */,
 				0CDC93F628DB8182009E6E78 /* ProfileViewController.swift in Sources */,
 				0CDC93F228DB814A009E6E78 /* InformationViewController.swift in Sources */,
 				0CD04CF528FEFBF90056AC18 /* AlertService.swift in Sources */,
