@@ -44,6 +44,9 @@
                                             <imageReference key="image" image="doc.text.below.ecg.fill" catalog="system" symbolScale="large"/>
                                             <fontDescription key="titleFontDescription" type="system" pointSize="28"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="showProfileVCWith_sender:" destination="N2b-1O-12g" eventType="touchUpInside" id="WLB-iC-eZI"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHn-Nx-tNR">
                                         <rect key="frame" x="0.0" y="448" width="358" height="134"/>
@@ -257,22 +260,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U81-f6-0u8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="708" y="-424"/>
-        </scene>
-        <!--Profile-->
-        <scene sceneID="uKV-aE-eXm">
-            <objects>
-                <viewController id="mFn-UD-9JS" customClass="ProfileViewController" customModule="SkinSkan" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="XYH-Vf-Hel">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="voz-lW-hKD"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Profile" largeTitleDisplayMode="always" id="Ax0-5h-EiS"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oGt-J5-KsB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2485" y="-597"/>
         </scene>
         <!--Nearby-->
         <scene sceneID="U7k-Nv-ITi">
@@ -601,12 +588,62 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="mFn-UD-9JS" kind="relationship" relationship="rootViewController" id="Bfy-HW-L5v"/>
+                        <segue destination="10D-n8-WyO" kind="relationship" relationship="rootViewController" id="lCP-Vs-BYF"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aaw-mL-3If" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1694" y="-596"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="npP-Cd-Oet">
+            <objects>
+                <tableViewController id="10D-n8-WyO" customClass="ProfileViewController" customModule="SkinSkan" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="FZG-ou-lhg">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileCell" rowHeight="60" id="8tf-OH-MT7" customClass="ProfileCell" customModule="SkinSkan" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="390" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8tf-OH-MT7" id="bWK-mL-hJS">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="60"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGL-uI-hlb">
+                                            <rect key="frame" x="20" y="18" width="48" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QS3-06-Uzj">
+                                            <rect key="frame" x="329" y="14.666666666666664" width="51" height="31"/>
+                                        </switch>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="jGL-uI-hlb" firstAttribute="leading" secondItem="bWK-mL-hJS" secondAttribute="leadingMargin" id="H2L-ZS-f2j"/>
+                                        <constraint firstAttribute="trailing" secondItem="QS3-06-Uzj" secondAttribute="trailing" constant="12" id="RE3-ay-Srq"/>
+                                        <constraint firstItem="QS3-06-Uzj" firstAttribute="centerY" secondItem="bWK-mL-hJS" secondAttribute="centerY" id="RQR-ud-cxC"/>
+                                        <constraint firstItem="jGL-uI-hlb" firstAttribute="centerY" secondItem="bWK-mL-hJS" secondAttribute="centerY" id="kcX-aE-yxN"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="settingsLabel" destination="jGL-uI-hlb" id="Z9O-vP-eIx"/>
+                                    <outlet property="switchControl" destination="QS3-06-Uzj" id="0jf-M3-SuK"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="10D-n8-WyO" id="LDV-GD-D1e"/>
+                            <outlet property="delegate" destination="10D-n8-WyO" id="Ehq-Xf-sMO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Profile" largeTitleDisplayMode="always" id="bo1-9j-w8S"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="89A-hl-FLi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2485" y="-597"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dGu-tJ-vUq">

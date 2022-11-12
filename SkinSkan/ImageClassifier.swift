@@ -16,7 +16,7 @@ class ImageClassifier {
         let defaultConfig = MLModelConfiguration()
 
         // Create an instance of the image classifier's wrapper class.
-        let imageClassifierWrapper = try? SkinSkanTest(configuration: defaultConfig)
+        let imageClassifierWrapper = try? SkinSkanTest2(configuration: defaultConfig)
 
         guard let imageClassifier = imageClassifierWrapper else {
             fatalError("App failed to create an image classifier model instance.")

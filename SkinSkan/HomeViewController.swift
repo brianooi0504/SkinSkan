@@ -22,4 +22,7 @@ class HomeViewController: UIViewController {
         tabBarController?.selectedIndex = 1
     }
 
+    @IBAction func showProfileVC(_sender: Any) {
+        tabBarController?.selectedIndex = 3
+    }
 }

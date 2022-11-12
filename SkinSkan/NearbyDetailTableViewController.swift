@@ -105,7 +105,8 @@ class NearbyDetailTableViewController: UITableViewController {
             case 4:
                 openBrowser(website: detailTableData[4].info)
             case 6:
-                openBrowser(website: "http://www.google.com/search?q=\(dermatologist.title.replacingOccurrences(of: pattern, with: "", options: [.regularExpression]))")
+                print("http://www.google.com/search?q=\(dermatologist.title.replacingOccurrences(of: pattern, with: "", options: [.regularExpression]))")
+                openBrowser(website: "http://www.google.com/search?q=\(dermatologist.title.replacingOccurrences(of: pattern, with: "%20", options: [.regularExpression]))")
             default:
                 print("Default")
         }
