@@ -19,6 +19,8 @@
 		0C7DD6EA28EAC1250071AB78 /* Disease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7DD6E928EAC1250071AB78 /* Disease.swift */; };
 		0C81C05C2920269000F6FEA3 /* Prediction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81C05A2920269000F6FEA3 /* Prediction+CoreDataClass.swift */; };
 		0C81C05D2920269000F6FEA3 /* Prediction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81C05B2920269000F6FEA3 /* Prediction+CoreDataProperties.swift */; };
+		0C81C0632921085C00F6FEA3 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81C0622921085C00F6FEA3 /* FeedbackViewController.swift */; };
+		0C81C0652921169700F6FEA3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81C0642921169700F6FEA3 /* AboutViewController.swift */; };
 		0C9DC15B28DC7A2900C49FD5 /* NearbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9DC15A28DC7A2900C49FD5 /* NearbyCell.swift */; };
 		0CA4D914290BF79900417FFF /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA4D913290BF79900417FFF /* ProfileHeader.swift */; };
 		0CA4D916290BFC5F00417FFF /* TableViewSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA4D915290BFC5F00417FFF /* TableViewSections.swift */; };
@@ -53,6 +55,8 @@
 		0C7DD6E928EAC1250071AB78 /* Disease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disease.swift; sourceTree = "<group>"; };
 		0C81C05A2920269000F6FEA3 /* Prediction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Prediction+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0C81C05B2920269000F6FEA3 /* Prediction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Prediction+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0C81C0622921085C00F6FEA3 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		0C81C0642921169700F6FEA3 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		0C9DC15A28DC7A2900C49FD5 /* NearbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyCell.swift; sourceTree = "<group>"; };
 		0CA4D913290BF79900417FFF /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		0CA4D915290BFC5F00417FFF /* TableViewSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSections.swift; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 				0CAC1C2628DDADD900AB3592 /* NearbyDetailCell.swift */,
 				0C0178EB290810D700E37847 /* NearbyDetailImageCollectionViewCell.swift */,
 				0C4E26E3291A5C5200F9C511 /* ProfileCell.swift */,
+				0C81C0622921085C00F6FEA3 /* FeedbackViewController.swift */,
+				0C81C0642921169700F6FEA3 /* AboutViewController.swift */,
 				0CDC93ED28DB7E80009E6E78 /* HomeViewController.swift */,
 				0CDC93F128DB814A009E6E78 /* InformationViewController.swift */,
 				0C177B9B28ED7D6D0092A835 /* InformationDetailViewController.swift */,
@@ -230,6 +236,7 @@
 				0CAC1C2728DDADD900AB3592 /* NearbyDetailCell.swift in Sources */,
 				0CDC93DC28DB779F009E6E78 /* SceneDelegate.swift in Sources */,
 				0C4E26ED291FCE6200F9C511 /* SkinSkan.xcdatamodeld in Sources */,
+				0C81C0632921085C00F6FEA3 /* FeedbackViewController.swift in Sources */,
 				0C177B9E28ED7DA60092A835 /* InformationDetailTableViewController.swift in Sources */,
 				0CDC93EE28DB7E80009E6E78 /* HomeViewController.swift in Sources */,
 				0CDA9ED928E3584D00DB37F0 /* TestViewController.swift in Sources */,
@@ -238,6 +245,7 @@
 				0C9DC15B28DC7A2900C49FD5 /* NearbyCell.swift in Sources */,
 				0CFDAF1728DDF86E00EAA5E5 /* NearbyDetailTableViewController.swift in Sources */,
 				0C4E26E4291A5C5300F9C511 /* ProfileCell.swift in Sources */,
+				0C81C0652921169700F6FEA3 /* AboutViewController.swift in Sources */,
 				0C234CE82904086C00BA08E3 /* ImageClassifier.swift in Sources */,
 				0C0178EC290810D700E37847 /* NearbyDetailImageCollectionViewCell.swift in Sources */,
 				0C4E26E8291F964800F9C511 /* SkinSkanTest2.mlmodel in Sources */,

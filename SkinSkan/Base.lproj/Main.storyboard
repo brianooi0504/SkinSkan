@@ -173,6 +173,13 @@
                                     <action selector="selectImageWithSender:" destination="lDU-1u-g7s" eventType="touchUpInside" id="ntK-hf-Mo5"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzo-gg-GMp">
+                                <rect key="frame" x="28" y="696.33333333333337" width="334" height="52.666666666666629"/>
+                                <string key="text">Disclaimer: This feature can detect only six different skin conditions. It serves as a reference and is not meant to replace medical professionals. If conditions are severe, please consult a doctor.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9eX-hz-uTE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -181,9 +188,12 @@
                             <constraint firstItem="9eX-hz-uTE" firstAttribute="trailing" secondItem="iUy-RJ-qB8" secondAttribute="trailing" constant="100" id="46P-PF-o00"/>
                             <constraint firstItem="iUy-RJ-qB8" firstAttribute="leading" secondItem="9eX-hz-uTE" secondAttribute="leading" constant="100" id="D9v-XD-mC9"/>
                             <constraint firstItem="9eX-hz-uTE" firstAttribute="trailing" secondItem="2Gp-jP-gMz" secondAttribute="trailing" constant="100" id="HCD-wV-V9i"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="qzo-gg-GMp" secondAttribute="bottom" constant="12" id="IpK-pO-qg7"/>
                             <constraint firstItem="UwT-uU-wQg" firstAttribute="leading" secondItem="9eX-hz-uTE" secondAttribute="leading" constant="28" id="Oay-HQ-c2Y"/>
                             <constraint firstItem="2Gp-jP-gMz" firstAttribute="leading" secondItem="9eX-hz-uTE" secondAttribute="leading" constant="100" id="RKT-Dv-QWF"/>
+                            <constraint firstItem="9eX-hz-uTE" firstAttribute="trailing" secondItem="qzo-gg-GMp" secondAttribute="trailing" constant="28" id="UYC-hY-FhC"/>
                             <constraint firstItem="9eX-hz-uTE" firstAttribute="trailing" secondItem="UwT-uU-wQg" secondAttribute="trailing" constant="28" id="YbS-cy-rAo"/>
+                            <constraint firstItem="qzo-gg-GMp" firstAttribute="leading" secondItem="9eX-hz-uTE" secondAttribute="leading" constant="28" id="hYo-9Q-WOd"/>
                             <constraint firstItem="UwT-uU-wQg" firstAttribute="top" secondItem="9eX-hz-uTE" secondAttribute="top" constant="8" id="nP4-dL-Zcl"/>
                             <constraint firstItem="iUy-RJ-qB8" firstAttribute="top" secondItem="UwT-uU-wQg" secondAttribute="bottom" constant="20" id="rxg-ud-hDW"/>
                             <constraint firstItem="2Gp-jP-gMz" firstAttribute="top" secondItem="iUy-RJ-qB8" secondAttribute="bottom" constant="40" id="s5G-dJ-sMj"/>
@@ -689,6 +699,121 @@
             </objects>
             <point key="canvasLocation" x="2485" y="-597"/>
         </scene>
+        <!--Feedback & Comments-->
+        <scene sceneID="Y2J-pf-Oxl">
+            <objects>
+                <viewController storyboardIdentifier="FeedbackViewController" id="g9T-OZ-3KG" customClass="FeedbackViewController" customModule="SkinSkan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lOb-JL-Ddo">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tPT-eJ-ljz">
+                                <rect key="frame" x="28" y="192" width="334" height="408"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ihS-v0-hHy">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" enablesReturnKeyAutomatically="YES" textContentType="name"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ha4-hK-ALM">
+                                        <rect key="frame" x="0.0" y="54" width="334" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES" textContentType="email"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfK-S9-LDZ">
+                                        <rect key="frame" x="0.0" y="108" width="334" height="300"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="GMK-Ms-590"/>
+                                        </constraints>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We appreciate any helpful feedback and comments. Please enter your information and send." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIo-E6-pTW">
+                                <rect key="frame" x="28" y="111" width="334" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rwE-vG-d89"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rwE-vG-d89" firstAttribute="trailing" secondItem="tPT-eJ-ljz" secondAttribute="trailing" constant="28" id="A7u-Sg-hWA"/>
+                            <constraint firstItem="rwE-vG-d89" firstAttribute="trailing" secondItem="OIo-E6-pTW" secondAttribute="trailing" constant="28" id="PuH-jh-TSp"/>
+                            <constraint firstItem="tPT-eJ-ljz" firstAttribute="leading" secondItem="rwE-vG-d89" secondAttribute="leading" constant="28" id="TDR-KK-BRp"/>
+                            <constraint firstItem="OIo-E6-pTW" firstAttribute="leading" secondItem="rwE-vG-d89" secondAttribute="leading" constant="28" id="WRg-EM-7qG"/>
+                            <constraint firstItem="OIo-E6-pTW" firstAttribute="top" secondItem="rwE-vG-d89" secondAttribute="top" constant="20" id="b93-7K-A6z"/>
+                            <constraint firstItem="tPT-eJ-ljz" firstAttribute="top" secondItem="OIo-E6-pTW" secondAttribute="bottom" constant="20" id="bfj-5n-MTZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Feedback &amp; Comments" id="PJO-fK-w08">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="mPN-fp-xoT">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="g9T-OZ-3KG" id="R3G-4M-xyU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="gcN-fB-e4f">
+                            <connections>
+                                <action selector="sendFeedback:" destination="g9T-OZ-3KG" id="XS9-Be-xU1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="ha4-hK-ALM" id="drZ-Dw-L3b"/>
+                        <outlet property="nameTextField" destination="ihS-v0-hHy" id="GIO-tc-Nfk"/>
+                        <outlet property="textView" destination="nfK-S9-LDZ" id="s01-ig-Gqy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wLi-dk-ihw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4583" y="-924"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="agi-NG-cmq">
+            <objects>
+                <viewController storyboardIdentifier="AboutViewController" id="Lbw-gq-S4N" customClass="AboutViewController" customModule="SkinSkan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p7f-Bv-67e">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SkinSkan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpg-Hq-Ug8">
+                                <rect key="frame" x="150.66666666666666" y="111" width="89" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBW-SW-6Lf">
+                                <rect key="frame" x="28" y="157.99999999999997" width="334" height="446.33333333333326"/>
+                                <mutableString key="text">SkinSkan is designed to detect 6 different types of skin conditions:   - Eczema (Dermatitis) - Urticaria - Psoriasis - TInea corporis (Ringworm) - Vitiligo - Scabies  However, inaccuracies may persist, particularly when images:  - Include conditions not aforementioned - Do not include any skin conditions  SkinSkan serves only as a reference tool and is not meant to replace medical professionals.  If your conditions are severe, please consult a doctor.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HLw-83-jne"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QBW-SW-6Lf" firstAttribute="top" secondItem="Vpg-Hq-Ug8" secondAttribute="bottom" constant="20" id="VQS-Ue-NTC"/>
+                            <constraint firstItem="HLw-83-jne" firstAttribute="trailing" secondItem="QBW-SW-6Lf" secondAttribute="trailing" constant="28" id="grj-3q-wVJ"/>
+                            <constraint firstItem="Vpg-Hq-Ug8" firstAttribute="centerX" secondItem="p7f-Bv-67e" secondAttribute="centerX" id="hgw-HG-G3K"/>
+                            <constraint firstItem="Vpg-Hq-Ug8" firstAttribute="top" secondItem="HLw-83-jne" secondAttribute="top" constant="20" id="kBZ-6T-wQp"/>
+                            <constraint firstItem="QBW-SW-6Lf" firstAttribute="leading" secondItem="HLw-83-jne" secondAttribute="leading" constant="28" id="sGw-lK-44b"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" id="AgG-Oh-KGj">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="uvX-JV-sGG">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="Lbw-gq-S4N" id="1Np-Sq-87q"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bdm-80-NH8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4582" y="-250"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="dGu-tJ-vUq">
             <objects>
@@ -835,6 +960,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dON-r5-XKr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="458" y="373"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uOe-Zz-9LO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EOb-q8-gP1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jei-pD-M5E">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="g9T-OZ-3KG" kind="relationship" relationship="rootViewController" id="LHo-7X-V0c"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u2x-lW-zG6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3654" y="-924"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eF8-gK-mrq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hlK-DB-Ueb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Akh-Q2-vS1">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Lbw-gq-S4N" kind="relationship" relationship="rootViewController" id="dD1-l8-8ty"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DEr-xw-NQo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3654" y="-250"/>
         </scene>
     </scenes>
     <resources>

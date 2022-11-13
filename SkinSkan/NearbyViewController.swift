@@ -15,7 +15,7 @@ class NearbyViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet var nearbyMapView: MKMapView!
     
     private var dermatologists: [Dermatologist] = []
-    private let apiKey = "AIzaSyAeOgQKGWPLOJG8f_gxW6FTxktXiTsq92k"
+    private let apiKey = "AIzaSyBvgegzPAD8vdVz7qRcxONYlfOVHvWCU30x12345"
     var locationManager = CLLocationManager()
     private var currentLocation: CLLocation?
     private var regionRadius: CLLocationDistance = 5000
@@ -164,6 +164,9 @@ class NearbyViewController: UIViewController, UITableViewDataSource, UITableView
 extension NearbyViewController: CLLocationManagerDelegate, MKMapViewDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]
     ) {
+        while locations.count == 0 {
+        }
+        
         manager.stopUpdatingLocation()
         manager.delegate = nil
         

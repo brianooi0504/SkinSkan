@@ -27,7 +27,7 @@ class ResultViewController: UIViewController {
             
             let formattedPredictions = formatPredictions(predictionResult: predictionResult)
 
-            let predictionString = formattedPredictions.joined(separator: "\n")
+            let predictionString = formattedPredictions.joined(separator: "\n\n")
             self.resultLabel.text = predictionString
         }
     }
@@ -42,7 +42,7 @@ class ResultViewController: UIViewController {
         let confs = predictionResult.confidences
         
         for i in 0 ..< diseases.count {
-            predString.append("\(diseases[i]) - \(String(format: "%.2f", confs[i]))%")
+            predString.append("\(diseases[i]) - \(String(format: "%.1f", confs[i]))% confidence")
         }
         
         predDiseaseIndex = findDiseaseIndex(name: diseases[0])

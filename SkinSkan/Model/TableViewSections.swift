@@ -28,13 +28,13 @@ enum appSettingsOptions: Int, CaseIterable, CustomStringConvertible {
 }
 
 enum feedbackOptions: Int, CaseIterable, CustomStringConvertible {
-    case tutorial
     case feedback
+    case about
     
     var description: String {
         switch self {
-        case .tutorial: return "Help"
         case .feedback: return "Feedback and Comments"
+        case .about: return "About"
         }
     }
 }

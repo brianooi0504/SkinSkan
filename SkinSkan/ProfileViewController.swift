@@ -18,7 +18,9 @@ class ProfileViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dateFormatter.dateFormat = "MMM dd yyyy HH:mm:ss"
-        
+        tableView.layoutMargins = .init(top: 0.0, left: 16, bottom: 0.0, right: 16)
+        // if you want the separator lines to follow the content width
+        tableView.separatorInset = tableView.layoutMargins
         fetchPredictions()
     }
     
@@ -141,6 +143,21 @@ extension ProfileViewController{
                 
                 let navController = UINavigationController(rootViewController: vc)
                 present(navController, animated: true)
+            case .feedback:
+                let feedbackChoice = feedbackOptions(rawValue: indexPath.row)
+                
+                switch feedbackChoice {
+                case .feedback:
+                    guard let vc = storyboard?.instantiateViewController(withIdentifier: "FeedbackViewController") as? FeedbackViewController else { return }
+                    let navController = UINavigationController(rootViewController: vc)
+                    present(navController, animated: true)
+                case .about:
+                    guard let vc = storyboard?.instantiateViewController(withIdentifier: "AboutViewController") as? AboutViewController else { return }
+                    let navController = UINavigationController(rootViewController: vc)
+                    present(navController, animated: true)
+                case .none:
+                    print("None")
+                }
             default:
                 print("Nothing")
             }

@@ -57,7 +57,10 @@ class InformationViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
-        tableView.tableFooterView = UIView()
+        
+        tableView.layoutMargins = .init(top: 0.0, left: 16, bottom: 0.0, right: 16)
+        // if you want the separator lines to follow the content width
+        tableView.separatorInset = tableView.layoutMargins
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
