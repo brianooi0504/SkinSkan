@@ -7,12 +7,42 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class ProfileViewController: UITableViewController {
-    var testResults: [String] = ["Test 1", "Test 2"]
-    let userDefaults = UserDefaults.standard
-    let SAVE_HISTORY_KEY = "saveHistoryKey"
+    var testResults: [Prediction] = []
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let dateFormatter = DateFormatter()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dateFormatter.dateFormat = "MMM dd yyyy HH:mm:ss"
+        
+        fetchPredictions()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        print("Hello")
+        fetchPredictions()
+    }
+    
+    func fetchPredictions() {
+        do {
+            self.testResults = try context.fetch(Prediction.fetchRequest())
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        } catch {
+            print("Unable to load test history")
+        }
+    }
+    
+}
+
+extension ProfileViewController{
     override func numberOfSections(in tableView: UITableView) -> Int {
         return ProfileSections.allCases.count
     }
@@ -50,21 +80,74 @@ class ProfileViewController: UITableViewController {
         return 40
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath) as! ProfileCell
+        cell.accessoryType = .disclosureIndicator
         guard let section = ProfileSections(rawValue: indexPath.section) else { return UITableViewCell() }
         
         switch section {
         case .testHistory:
-            cell.configure(labelText: testResults[indexPath.row], containsSwitch: false, userDefaults: userDefaults, userDefaultsKey: SAVE_HISTORY_KEY)
+            cell.configure(labelText: dateFormatter.string(from: testResults[indexPath.row].datetime), containsSwitch: false)
         case .appSettings:
             let appSetting = appSettingsOptions(rawValue: indexPath.row)
-            cell.configure(labelText: appSetting?.description ?? "error", containsSwitch: true, userDefaults: userDefaults, userDefaultsKey: SAVE_HISTORY_KEY)
+            cell.configure(labelText: appSetting?.description ?? "error", containsSwitch: true)
+            cell.accessoryType = .none
         case .feedback:
             let feedbackChoice = feedbackOptions(rawValue: indexPath.row)
-            cell.configure(labelText: feedbackChoice?.description ?? "error", containsSwitch: false, userDefaults: userDefaults, userDefaultsKey: SAVE_HISTORY_KEY)
+            cell.configure(labelText: feedbackChoice?.description ?? "error", containsSwitch: false)
         }
         
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        guard let section = ProfileSections(rawValue: indexPath.section) else { return nil }
+        
+        switch section {
+        case .testHistory:
+            let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
+                
+                let historyToRemove = self.testResults[indexPath.row]
+                self.context.delete(historyToRemove)
+                
+                do {
+                    try self.context.save()
+                } catch {
+                    print("Cannot delete history")
+                }
+                
+                self.fetchPredictions()
+            }
+            
+            return UISwipeActionsConfiguration(actions: [action])
+        default:
+            return nil
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let section = ProfileSections(rawValue: indexPath.section) {
+            switch section {
+            case .testHistory:
+                guard let vc = storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController else { return }
+                
+                vc.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissPopUp))
+                vc.configure(predictionResult: testResults[indexPath.row])
+                vc.title = dateFormatter.string(from: testResults[indexPath.row].datetime)
+                
+                let navController = UINavigationController(rootViewController: vc)
+                present(navController, animated: true)
+            default:
+                print("Nothing")
+            }
+        }
+    }
+    
+    @objc func dismissPopUp() {
+        self.dismiss(animated: true, completion: nil)
     }
 }

@@ -11,12 +11,10 @@ import UIKit
 class ProfileCell: UITableViewCell {
     @IBOutlet var switchControl: UISwitch!
     @IBOutlet var settingsLabel: UILabel!
-    private var userDefaults: UserDefaults!
-    private var userDefaultsKey: String!
+    let userDefaults = UserDefaults.standard
+    let SAVE_HISTORY_KEY = "saveHistoryKey"
     
-    func configure(labelText: String, containsSwitch: Bool, userDefaults: UserDefaults, userDefaultsKey: String) {
-        self.userDefaults = userDefaults
-        self.userDefaultsKey = userDefaultsKey
+    func configure(labelText: String, containsSwitch: Bool) {
         settingsLabel.text = labelText
         switchControl.addTarget(self, action: #selector(handleSwitchAction), for: .valueChanged)
         switchControl.isHidden = !containsSwitch
@@ -24,7 +22,7 @@ class ProfileCell: UITableViewCell {
     }
     
     func setSwitch() {
-        if userDefaults.bool(forKey: userDefaultsKey) {
+        if userDefaults.bool(forKey: SAVE_HISTORY_KEY) {
             switchControl.setOn(true, animated: true)
         } else {
             switchControl.setOn(false, animated: true)
@@ -34,10 +32,10 @@ class ProfileCell: UITableViewCell {
     @objc func handleSwitchAction(sender: UISwitch) {
         if sender.isOn {
             print("Turned On")
-            userDefaults.set(true, forKey: userDefaultsKey)
+            userDefaults.set(true, forKey: SAVE_HISTORY_KEY)
         } else {
             print("Turned Off")
-            userDefaults.set(false, forKey: userDefaultsKey)
+            userDefaults.set(false, forKey: SAVE_HISTORY_KEY)
         }
     }
 }

@@ -11,3 +11,7 @@ import UIKit
 class NearbyDetailImageCollectionViewCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
 }
+
+class InfoImageCollectionViewCell: UICollectionViewCell {
+    @IBOutlet var imageView: UIImageView!
+}

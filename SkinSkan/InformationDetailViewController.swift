@@ -8,12 +8,16 @@
 import Foundation
 import UIKit
 
-class InformationDetailViewController: UIViewController {
+class InformationDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     private var disease: Disease!
+    private var diseaseImages: [UIImage] = []
+    
+    @IBOutlet var collectionView: UICollectionView!
     
     func configure(disease: Disease) {
         self.disease = disease
         self.title = disease.name
+        self.diseaseImages = disease.images
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -21,5 +25,24 @@ class InformationDetailViewController: UIViewController {
             let destination = segue.destination as! InformationDetailTableViewController
             destination.configure(disease: disease)
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if diseaseImages.count == 0 {
+            return 1
+        }
+        return diseaseImages.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InfoImageCollectionViewCell", for: indexPath) as! InfoImageCollectionViewCell
+        
+        if diseaseImages.count != 0{
+            cell.imageView.image = diseaseImages[indexPath.row]
+        } else {
+            cell.imageView.image = UIImage(named: "NoImages")
+        }
+        
+        return cell
     }
 }

@@ -39,20 +39,20 @@ class ImageClassifier {
     /// since each can be expensive in time and resources.
     private static let imageClassifier = createImageClassifier()
 
-    /// Stores a classification name and confidence for an image classifier's prediction.
-    /// - Tag: Prediction
-    struct Prediction {
-        /// The name of the object or scene the image classifier recognizes in an image.
-        let classification: String
-
-        /// The image classifier's confidence as a percentage string.
-        ///
-        /// The prediction string doesn't include the % symbol in the string.
-        let confidencePercentage: String
-    }
+//    /// Stores a classification name and confidence for an image classifier's prediction.
+//    /// - Tag: Prediction
+//    struct Prediction {
+//        /// The name of the object or scene the image classifier recognizes in an image.
+//        let classification: String
+//
+//        /// The image classifier's confidence as a percentage string.
+//        ///
+//        /// The prediction string doesn't include the % symbol in the string.
+//        let confidencePercentage: String
+//    }
 
     /// The function signature the caller must provide as a completion handler.
-    typealias ImagePredictionHandler = (_ predictions: [Prediction]?) -> Void
+    typealias ImagePredictionHandler = (_ predictions: [PredictionResult]?) -> Void
 
     /// A dictionary of prediction handler functions, each keyed by its Vision request.
     private var predictionHandlers = [VNRequest: ImagePredictionHandler]()
@@ -102,7 +102,7 @@ class ImageClassifier {
         }
 
         // Start with a `nil` value in case there's a problem.
-        var predictions: [Prediction]? = nil
+        var predictions: [PredictionResult]? = nil
 
         // Call the client's completion handler after the method returns.
         defer {
@@ -133,29 +133,8 @@ class ImageClassifier {
 
         // Create a prediction array from the observations.
         predictions = observations.map { observation in
-            // Convert each observation into an `ImagePredictor.Prediction` instance.
-            Prediction(classification: observation.identifier,
-                       confidencePercentage: observation.confidencePercentageString)
-        }
-    }
-}
-
-extension VNClassificationObservation {
-    /// Generates a string of the observation's confidence as a percentage.
-    var confidencePercentageString: String {
-        let percentage = confidence * 100
-
-        switch percentage {
-            case 100.0...:
-                return "100%"
-            case 10.0..<100.0:
-                return String(format: "%2.1f", percentage)
-            case 1.0..<10.0:
-                return String(format: "%2.1f", percentage)
-            case ..<1.0:
-                return String(format: "%1.2f", percentage)
-            default:
-                return String(format: "%2.1f", percentage)
+            // Convert each observation into an `PredictionResult` instance.
+            PredictionResult(diseaseName: observation.identifier, confidencePct: Double(observation.confidence)*100)
         }
     }
 }

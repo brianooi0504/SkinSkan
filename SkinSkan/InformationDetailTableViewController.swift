@@ -10,16 +10,18 @@ import UIKit
 
 class InformationDetailTableViewController: UITableViewController {
     private var disease: Disease!
-    private let sectionLabels = ["Name", "Description", "Symptoms", "Treatments"]
+    private let sectionLabels = ["Name", "Description", "Similar Disease(s)", "Symptoms", "Treatments", "Learn More"]
     private var detailTableData: [DetailCellData]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         detailTableData = [DetailCellData(expanded: true, info: disease.name),
-                           DetailCellData(expanded: false, info: " "),
-                           DetailCellData(expanded: false, info: " "),
-                           DetailCellData(expanded: false, info: " ")]
+                           DetailCellData(expanded: true, info: disease.desc),
+                           DetailCellData(expanded: true, info: disease.similar),
+                           DetailCellData(expanded: true, info: disease.symptom),
+                           DetailCellData(expanded: true, info: disease.treatment),
+                           DetailCellData(expanded: true, info: "Read more on WebMD")]
 
         tableView.reloadData()
     }
@@ -90,7 +92,25 @@ class InformationDetailTableViewController: UITableViewController {
         tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = indexPath.section
+        
+        switch section {
+            case 5: openBrowser(website: disease.link)
+            default:
+                print("Default")
+        }
+    }
+    
     func configure(disease: Disease) {
         self.disease = disease
+    }
+    
+    @objc func openBrowser(website: String) {
+        if website != "N/A" {
+            if let url = URL(string: website) {
+                UIApplication.shared.open(url)
+            }
+        }
     }
 }

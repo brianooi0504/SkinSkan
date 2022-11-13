@@ -15,7 +15,7 @@ class NearbyViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet var nearbyMapView: MKMapView!
     
     private var dermatologists: [Dermatologist] = []
-    private let apiKey = "AIzaSyAeOgQKGWPLOJG8f_gxW6FTxktXiTsq92k12345"
+    private let apiKey = "AIzaSyAeOgQKGWPLOJG8f_gxW6FTxktXiTsq92k"
     var locationManager = CLLocationManager()
     private var currentLocation: CLLocation?
     private var regionRadius: CLLocationDistance = 5000

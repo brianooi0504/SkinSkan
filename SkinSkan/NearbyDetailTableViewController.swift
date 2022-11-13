@@ -20,12 +20,12 @@ class NearbyDetailTableViewController: UITableViewController {
         super.viewDidLoad()
         
         detailTableData = [DetailCellData(expanded: true, info: dermatologist.title),
-                           DetailCellData(expanded: false, info: dermatologist.address),
-                           DetailCellData(expanded: false, info: dermatologist.hours.joined(separator: "\n")),
-                           DetailCellData(expanded: false, info: dermatologist.contacts),
-                           DetailCellData(expanded: false, info: dermatologist.website),
-                           DetailCellData(expanded: false, info: String(dermatologist.rating) + " ★"),
-                           DetailCellData(expanded: false, info: "Get more information on Google")]
+                           DetailCellData(expanded: true, info: dermatologist.address),
+                           DetailCellData(expanded: true, info: dermatologist.hours.joined(separator: "\n")),
+                           DetailCellData(expanded: true, info: dermatologist.contacts),
+                           DetailCellData(expanded: true, info: dermatologist.website),
+                           DetailCellData(expanded: true, info: String(dermatologist.rating) + " ★"),
+                           DetailCellData(expanded: true, info: "Get more information on Google")]
 
         tableView.reloadData()
         
@@ -98,14 +98,10 @@ class NearbyDetailTableViewController: UITableViewController {
         let section = indexPath.section
         
         switch section {
-            case 1:
-                openMap()
-            case 3:
-                phoneCall()
-            case 4:
-                openBrowser(website: detailTableData[4].info)
+            case 1: openMap()
+            case 3: phoneCall()
+            case 4: openBrowser(website: detailTableData[4].info)
             case 6:
-                print("http://www.google.com/search?q=\(dermatologist.title.replacingOccurrences(of: pattern, with: "", options: [.regularExpression]))")
                 openBrowser(website: "http://www.google.com/search?q=\(dermatologist.title.replacingOccurrences(of: pattern, with: "%20", options: [.regularExpression]))")
             default:
                 print("Default")
