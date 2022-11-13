@@ -3,7 +3,6 @@
     <entity name="Prediction" representedClassName="Prediction" syncable="YES">
         <attribute name="confidences" attributeType="Transformable" valueTransformerName="" customClassName="[Double]"/>
         <attribute name="datetime" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="image" attributeType="Transformable" valueTransformerName="" customClassName="UIImage"/>
         <attribute name="results" attributeType="Transformable" valueTransformerName="" customClassName="[String]"/>
     </entity>

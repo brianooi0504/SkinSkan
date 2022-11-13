@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class InformationViewController: UITableViewController {
+class InformationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     static var diseases: [Disease] =
     [Disease(name: "Eczema (Dermatitis)",
              desc: "Eczema is a group of conditions that make your skin inflamed or irritated. The most common type is atopic dermatitis or atopic eczema. “Atopic” refers to a person’s tendency to get allergic conditions such as asthma and hay fever.",
@@ -52,30 +52,26 @@ class InformationViewController: UITableViewController {
             treatment: "Scabicide lotion, cream, and other antibiotic creams. Talk to your doctor to know more.",
             link: "https://www.webmd.com/skin-problems-and-treatments/scabies-do-you-have-them",
             images: [UIImage(named: "sca1")!, UIImage(named: "sca2")!, UIImage(named: "sca3")!, UIImage(named: "sca4")!])]
-    
+    @IBOutlet var infoTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.reloadData()
-        
-        tableView.layoutMargins = .init(top: 0.0, left: 16, bottom: 0.0, right: 16)
-        // if you want the separator lines to follow the content width
-        tableView.separatorInset = tableView.layoutMargins
+        infoTableView.reloadData()
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return InformationViewController.diseases.count
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "InformationCell", for: indexPath) as? InformationCell else {
             fatalError("Dequeue cell error")
         }
@@ -88,15 +84,21 @@ class InformationViewController: UITableViewController {
         imageView.contentMode = .scaleAspectFill
         imageView.alpha = 0.5
         cell.backgroundView = imageView
+        cell.layer.cornerRadius = 8
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //Change the selected background view of the cell.
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "InformationDetailSegue" {
             if let destination = segue.destination as? InformationDetailViewController,
                let selectedCell = sender as? UITableViewCell,
-               let indexPath = tableView.indexPath(for: selectedCell) {
+               let indexPath = infoTableView.indexPath(for: selectedCell) {
                 let rowIndex = indexPath.row
                 let selectedDisease: Disease = InformationViewController.diseases[rowIndex]
                 destination.configure(disease: selectedDisease)

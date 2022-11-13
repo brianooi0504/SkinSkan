@@ -12,7 +12,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--Welcome!-->
         <scene sceneID="874-Yy-H7w">
             <objects>
                 <viewController id="N2b-1O-12g" customClass="HomeViewController" customModule="SkinSkan" customModuleProvider="target" sceneMemberID="viewController">
@@ -45,7 +45,7 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="28"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="showProfileVCWith_sender:" destination="N2b-1O-12g" eventType="touchUpInside" id="WLB-iC-eZI"/>
+                                            <action selector="showProfileVC:" destination="N2b-1O-12g" eventType="touchUpInside" id="EsQ-pe-KPt"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHn-Nx-tNR">
@@ -74,7 +74,7 @@
                             <constraint firstItem="9rd-1K-64r" firstAttribute="leading" secondItem="qb0-fa-Fhr" secondAttribute="leading" constant="16" id="gLG-iu-i0v"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="always" id="DqN-DK-0H2"/>
+                    <navigationItem key="navigationItem" title="Welcome!" largeTitleDisplayMode="always" id="DqN-DK-0H2"/>
                     <connections>
                         <outlet property="historyButton" destination="8zv-Tg-uWm" id="s7X-oA-nOk"/>
                         <outlet property="infoButton" destination="YHn-Nx-tNR" id="iFY-CX-ayd"/>
@@ -84,47 +84,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxO-bF-JPb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1898.4615384615383" y="-597.15639810426535"/>
-        </scene>
-        <!--Information-->
-        <scene sceneID="0e4-qV-jwr">
-            <objects>
-                <tableViewController id="O6I-HF-WAJ" customClass="InformationViewController" customModule="SkinSkan" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="sTt-Of-Z0B">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="InformationCell" textLabel="TYy-Za-lug" rowHeight="100" style="IBUITableViewCellStyleDefault" id="ewv-55-xKP" customClass="InformationCell" customModule="SkinSkan" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="390" height="100"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ewv-55-xKP" id="fqh-Nb-Vyv">
-                                    <rect key="frame" x="0.0" y="0.0" width="327.66666666666669" height="100"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TYy-Za-lug">
-                                            <rect key="frame" x="20" y="0.0" width="299.66666666666669" height="100"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="OPD-YO-bJW" kind="show" identifier="InformationDetailSegue" id="gVR-pY-eTi"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="O6I-HF-WAJ" id="ZKV-Vm-WMP"/>
-                            <outlet property="delegate" destination="O6I-HF-WAJ" id="n7P-3y-Xml"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Information" largeTitleDisplayMode="always" id="FkL-on-Gp7"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lYI-T0-d2k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1098" y="373"/>
         </scene>
         <!--Start a test-->
         <scene sceneID="Qql-ba-rmG">
@@ -140,7 +99,7 @@
                                     <constraint firstAttribute="width" secondItem="2Gp-jP-gMz" secondAttribute="height" multiplier="19:6" id="qXe-uq-yEW"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Start test" cornerStyle="medium" titleAlignment="center">
+                                <buttonConfiguration key="configuration" style="gray" title="Start Test" cornerStyle="medium" titleAlignment="center">
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -153,7 +112,7 @@
                                     <constraint firstAttribute="width" secondItem="iUy-RJ-qB8" secondAttribute="height" multiplier="18:4" id="mvE-O1-krr"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" image="trash.fill" catalog="system" imagePlacement="trailing" title="Remove photo" imagePadding="10" cornerStyle="medium" titleAlignment="center">
+                                <buttonConfiguration key="configuration" style="gray" image="trash.fill" catalog="system" imagePlacement="trailing" title="Remove Image" imagePadding="10" cornerStyle="medium" titleAlignment="center">
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="16"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -540,20 +499,20 @@
         <scene sceneID="2Wg-qQ-0w7">
             <objects>
                 <tableViewController id="4Xx-GR-PM0" customClass="NearbyDetailTableViewController" customModule="SkinSkan" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="FUv-5C-cai">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="FUv-5C-cai">
                         <rect key="frame" x="0.0" y="0.0" width="358" height="442.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NearbyDetailCell" textLabel="XSX-Nj-UBE" style="IBUITableViewCellStyleDefault" id="fTs-15-wOQ" customClass="NearbyDetailCell" customModule="SkinSkan" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="358" height="48.666667938232422"/>
+                                <rect key="frame" x="0.0" y="50" width="358" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fTs-15-wOQ" id="dLe-13-Vji">
-                                    <rect key="frame" x="0.0" y="0.0" width="358" height="48.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="358" height="48"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XSX-Nj-UBE">
-                                            <rect key="frame" x="20" y="0.0" width="318" height="48.666667938232422"/>
+                                            <rect key="frame" x="20" y="0.0" width="318" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
@@ -604,7 +563,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="O6I-HF-WAJ" kind="relationship" relationship="rootViewController" id="ECQ-0o-mDy"/>
+                        <segue destination="Lnc-Gm-edC" kind="relationship" relationship="rootViewController" id="lgV-jr-weE"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DFC-1B-g7S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -642,7 +601,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="CGa-Xv-tDF" kind="relationship" relationship="rootViewController" id="Yc3-Z6-O49"/>
+                        <segue destination="q91-iA-AX5" kind="relationship" relationship="rootViewController" id="1ZL-PF-8Ne"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aaw-mL-3If" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -650,52 +609,68 @@
             <point key="canvasLocation" x="1694" y="-596"/>
         </scene>
         <!--Profile-->
-        <scene sceneID="QdM-co-R9P">
+        <scene sceneID="DIr-NY-LS8">
             <objects>
-                <tableViewController id="CGa-Xv-tDF" customClass="ProfileViewController" customModule="SkinSkan" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Odf-hf-Hgk">
+                <viewController id="q91-iA-AX5" customClass="ProfileViewController" customModule="SkinSkan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q86-Dn-KlO">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileCell" rowHeight="60" id="Trz-xZ-aqN" customClass="ProfileCell" customModule="SkinSkan" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="390" height="60"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Trz-xZ-aqN" id="wfl-Lc-tYH">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="60"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoQ-I4-Sk9">
-                                            <rect key="frame" x="20" y="17" width="50" height="26.333333333333329"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0gX-jF-v5e">
-                                            <rect key="frame" x="329" y="14.666666666666664" width="51" height="31"/>
-                                        </switch>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="0gX-jF-v5e" firstAttribute="centerY" secondItem="wfl-Lc-tYH" secondAttribute="centerY" id="3al-HY-DF0"/>
-                                        <constraint firstAttribute="trailing" secondItem="0gX-jF-v5e" secondAttribute="trailing" constant="12" id="mgS-QG-yev"/>
-                                        <constraint firstItem="eoQ-I4-Sk9" firstAttribute="centerY" secondItem="wfl-Lc-tYH" secondAttribute="centerY" id="s7W-5I-Z01"/>
-                                        <constraint firstItem="eoQ-I4-Sk9" firstAttribute="leading" secondItem="wfl-Lc-tYH" secondAttribute="leadingMargin" id="tgg-oE-Tho"/>
-                                    </constraints>
-                                </tableViewCellContentView>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jnf-Iw-f4q">
+                                <rect key="frame" x="16" y="91" width="358" height="670"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileCell" rowHeight="60" id="7If-ku-SH5" customClass="ProfileCell" customModule="SkinSkan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="358" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7If-ku-SH5" id="ae7-Lt-UIu">
+                                            <rect key="frame" x="0.0" y="0.0" width="358" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjl-Ch-bTY">
+                                                    <rect key="frame" x="20" y="17.333333333333336" width="50" height="25.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nAE-l5-yxs">
+                                                    <rect key="frame" x="297" y="14.666666666666664" width="51" height="31"/>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nAE-l5-yxs" firstAttribute="centerY" secondItem="ae7-Lt-UIu" secondAttribute="centerY" id="1od-HA-AHr"/>
+                                                <constraint firstAttribute="trailing" secondItem="nAE-l5-yxs" secondAttribute="trailing" constant="12" id="7kP-o5-ZUx"/>
+                                                <constraint firstItem="Tjl-Ch-bTY" firstAttribute="centerY" secondItem="ae7-Lt-UIu" secondAttribute="centerY" id="NvJ-lh-ki3"/>
+                                                <constraint firstItem="Tjl-Ch-bTY" firstAttribute="leading" secondItem="ae7-Lt-UIu" secondAttribute="leadingMargin" id="lx0-VE-x07"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="settingsLabel" destination="Tjl-Ch-bTY" id="WYe-De-kXl"/>
+                                            <outlet property="switchControl" destination="nAE-l5-yxs" id="vxH-nH-i6M"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <outlet property="settingsLabel" destination="eoQ-I4-Sk9" id="pSQ-bJ-1G5"/>
-                                    <outlet property="switchControl" destination="0gX-jF-v5e" id="TMk-54-cBY"/>
+                                    <outlet property="dataSource" destination="q91-iA-AX5" id="s7m-RF-RUS"/>
+                                    <outlet property="delegate" destination="q91-iA-AX5" id="3yx-LG-YZp"/>
                                 </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="CGa-Xv-tDF" id="VPg-ga-JhO"/>
-                            <outlet property="delegate" destination="CGa-Xv-tDF" id="bvA-vW-04Y"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Profile" id="oZv-Jc-qzp"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hhJ-0g-XTm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3h3-fe-uYc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3h3-fe-uYc" firstAttribute="bottom" secondItem="jnf-Iw-f4q" secondAttribute="bottom" id="7eL-hz-PgF"/>
+                            <constraint firstItem="3h3-fe-uYc" firstAttribute="trailing" secondItem="jnf-Iw-f4q" secondAttribute="trailing" constant="16" id="9PM-pw-eKw"/>
+                            <constraint firstItem="jnf-Iw-f4q" firstAttribute="leading" secondItem="3h3-fe-uYc" secondAttribute="leading" constant="16" id="YQE-Ni-slH"/>
+                            <constraint firstItem="jnf-Iw-f4q" firstAttribute="top" secondItem="3h3-fe-uYc" secondAttribute="top" id="od7-ft-sNU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile" id="sgm-2K-GYl"/>
+                    <connections>
+                        <outlet property="profileTableView" destination="jnf-Iw-f4q" id="4WJ-Zj-d5e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uAB-DP-leD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2485" y="-597"/>
         </scene>
@@ -726,6 +701,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="300" id="GMK-Ms-590"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                     </textView>
                                 </subviews>
@@ -786,7 +762,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBW-SW-6Lf">
                                 <rect key="frame" x="28" y="157.99999999999997" width="334" height="446.33333333333326"/>
-                                <mutableString key="text">SkinSkan is designed to detect 6 different types of skin conditions:   - Eczema (Dermatitis) - Urticaria - Psoriasis - TInea corporis (Ringworm) - Vitiligo - Scabies  However, inaccuracies may persist, particularly when images:  - Include conditions not aforementioned - Do not include any skin conditions  SkinSkan serves only as a reference tool and is not meant to replace medical professionals.  If your conditions are severe, please consult a doctor.</mutableString>
+                                <string key="text">SkinSkan is designed to detect 6 different types of skin conditions:   - Eczema (Dermatitis) - Urticaria - Psoriasis - TInea corporis (Ringworm) - Vitiligo - Scabies  However, inaccuracies may persist, particularly when images:  - Include conditions not aforementioned - Do not include any skin conditions  SkinSkan serves only as a reference tool and is not meant to replace medical professionals.  If your conditions are severe, please consult a doctor.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -831,6 +807,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPV-az-uwM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2485" y="1091"/>
+        </scene>
+        <!--Information-->
+        <scene sceneID="S1O-BG-CoR">
+            <objects>
+                <viewController id="Lnc-Gm-edC" customClass="InformationViewController" customModule="SkinSkan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aTy-Cl-Bip">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DpB-qb-oAx">
+                                <rect key="frame" x="16" y="91" width="358" height="670"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" textLabel="K56-Zu-e6w" rowHeight="100" style="IBUITableViewCellStyleDefault" id="StD-Ep-9rc" customClass="InformationCell" customModule="SkinSkan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="358" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="StD-Ep-9rc" id="0GF-fa-8zq">
+                                            <rect key="frame" x="0.0" y="0.0" width="295.66666666666669" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K56-Zu-e6w">
+                                                    <rect key="frame" x="20" y="0.0" width="267.66666666666669" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="OPD-YO-bJW" kind="show" identifier="InformationDetailSegue" id="LKY-od-xoN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Lnc-Gm-edC" id="pCF-4e-tKP"/>
+                                    <outlet property="delegate" destination="Lnc-Gm-edC" id="FUM-IL-iTh"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SjX-dT-XIA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DpB-qb-oAx" firstAttribute="leading" secondItem="SjX-dT-XIA" secondAttribute="leading" constant="16" id="Icy-vn-MKn"/>
+                            <constraint firstItem="SjX-dT-XIA" firstAttribute="trailing" secondItem="DpB-qb-oAx" secondAttribute="trailing" constant="16" id="etH-GF-ITc"/>
+                            <constraint firstItem="DpB-qb-oAx" firstAttribute="top" secondItem="SjX-dT-XIA" secondAttribute="top" id="fAA-Jk-Q8M"/>
+                            <constraint firstItem="SjX-dT-XIA" firstAttribute="bottom" secondItem="DpB-qb-oAx" secondAttribute="bottom" id="jhF-hf-YLZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Information" id="6Ir-E2-GLN"/>
+                    <connections>
+                        <outlet property="infoTableView" destination="DpB-qb-oAx" id="sX4-sG-QsP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MmM-qb-0gf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1098" y="373"/>
         </scene>
         <!--Information Detail View Controller-->
         <scene sceneID="q7R-mk-mAv">
@@ -928,20 +961,20 @@
         <scene sceneID="cVK-XL-z8B">
             <objects>
                 <tableViewController id="iQC-98-v1Q" customClass="InformationDetailTableViewController" customModule="SkinSkan" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="kQi-9R-NQj">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="kQi-9R-NQj">
                         <rect key="frame" x="0.0" y="0.0" width="358" height="393.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InformationDetailCell" textLabel="f43-Qe-uZZ" style="IBUITableViewCellStyleDefault" id="25Q-kS-NS9" customClass="InformationDetailCell" customModule="SkinSkan" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="358" height="48.666667938232422"/>
+                                <rect key="frame" x="0.0" y="50" width="358" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="25Q-kS-NS9" id="0md-ik-9VE">
-                                    <rect key="frame" x="0.0" y="0.0" width="358" height="48.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="358" height="48"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f43-Qe-uZZ">
-                                            <rect key="frame" x="20" y="0.0" width="318" height="48.666667938232422"/>
+                                            <rect key="frame" x="20" y="0.0" width="318" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>

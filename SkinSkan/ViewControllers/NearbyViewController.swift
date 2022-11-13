@@ -162,6 +162,27 @@ class NearbyViewController: UIViewController, UITableViewDataSource, UITableView
 }
 
 extension NearbyViewController: CLLocationManagerDelegate, MKMapViewDelegate {
+    func accessNeededAlert() {
+        guard let settingsAppURL = URL(string: UIApplication.openSettingsURLString),
+                UIApplication.shared.canOpenURL(settingsAppURL) else {
+            assertionFailure("Unable to open App privacy settings")
+            return
+        }
+        
+        let alert = UIAlertController(
+            title: "SkinSkan Would Like to Access your Location",
+            message: "This app requires location services to obtain nearby dermatologists.",
+            preferredStyle: UIAlertController.Style.alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "Allow Location", style: .default, handler: { (alert) -> Void in
+            UIApplication.shared.open(settingsAppURL, options: [:], completionHandler: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]
     ) {
         while locations.count == 0 {
@@ -189,7 +210,10 @@ extension NearbyViewController: CLLocationManagerDelegate, MKMapViewDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error
     ) {
-        print("Location unavailable!")
+        switch manager.authorizationStatus {
+        case .denied: accessNeededAlert()
+        default: print("Location unavailable!")
+        }
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -245,6 +269,8 @@ extension NearbyViewController: CLLocationManagerDelegate, MKMapViewDelegate {
     }
     
     @IBAction func reCenterLoc(_ sender: UIBarButtonItem) {
+        guard let selectedRow = dermatologistTableView.indexPathForSelectedRow else { return }
+        dermatologistTableView.deselectRow(at: selectedRow, animated: true)
         if let currentLocation = currentLocation {
             setMapCenter(coordinates: currentLocation.coordinate, locName: "My Position", regionRadius: regionRadius)
         }

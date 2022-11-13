@@ -12,27 +12,23 @@
 		0C177B9E28ED7DA60092A835 /* InformationDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C177B9D28ED7DA60092A835 /* InformationDetailTableViewController.swift */; };
 		0C234CE42903FCBA00BA08E3 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C234CE32903FCBA00BA08E3 /* ResultViewController.swift */; };
 		0C234CE82904086C00BA08E3 /* ImageClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C234CE72904086C00BA08E3 /* ImageClassifier.swift */; };
-		0C234CF229040AC700BA08E3 /* SkinSkanTest.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0C234CF129040AC700BA08E3 /* SkinSkanTest.mlmodel */; };
 		0C4E26E4291A5C5300F9C511 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4E26E3291A5C5200F9C511 /* ProfileCell.swift */; };
-		0C4E26E8291F964800F9C511 /* SkinSkanTest2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0C4E26E7291F964800F9C511 /* SkinSkanTest2.mlmodel */; };
+		0C4E26E8291F964800F9C511 /* SkinSkanTest.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0C4E26E7291F964800F9C511 /* SkinSkanTest.mlmodel */; };
 		0C4E26ED291FCE6200F9C511 /* SkinSkan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C4E26EB291FCE6200F9C511 /* SkinSkan.xcdatamodeld */; };
 		0C7DD6EA28EAC1250071AB78 /* Disease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7DD6E928EAC1250071AB78 /* Disease.swift */; };
-		0C81C05C2920269000F6FEA3 /* Prediction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81C05A2920269000F6FEA3 /* Prediction+CoreDataClass.swift */; };
-		0C81C05D2920269000F6FEA3 /* Prediction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81C05B2920269000F6FEA3 /* Prediction+CoreDataProperties.swift */; };
 		0C81C0632921085C00F6FEA3 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81C0622921085C00F6FEA3 /* FeedbackViewController.swift */; };
 		0C81C0652921169700F6FEA3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81C0642921169700F6FEA3 /* AboutViewController.swift */; };
+		0C81C06A292165EE00F6FEA3 /* Prediction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81C068292165EE00F6FEA3 /* Prediction+CoreDataClass.swift */; };
+		0C81C06B292165EE00F6FEA3 /* Prediction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81C069292165EE00F6FEA3 /* Prediction+CoreDataProperties.swift */; };
 		0C9DC15B28DC7A2900C49FD5 /* NearbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9DC15A28DC7A2900C49FD5 /* NearbyCell.swift */; };
-		0CA4D914290BF79900417FFF /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA4D913290BF79900417FFF /* ProfileHeader.swift */; };
 		0CA4D916290BFC5F00417FFF /* TableViewSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA4D915290BFC5F00417FFF /* TableViewSections.swift */; };
 		0CAC1C2128DD9D3E00AB3592 /* Dermatologist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC1C2028DD9D3E00AB3592 /* Dermatologist.swift */; };
 		0CAC1C2328DDA1EC00AB3592 /* NearbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC1C2228DDA1EC00AB3592 /* NearbyViewController.swift */; };
 		0CAC1C2528DDA93E00AB3592 /* NearbyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC1C2428DDA93E00AB3592 /* NearbyDetailViewController.swift */; };
 		0CAC1C2728DDADD900AB3592 /* NearbyDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC1C2628DDADD900AB3592 /* NearbyDetailCell.swift */; };
-		0CD04CF528FEFBF90056AC18 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD04CF428FEFBF90056AC18 /* AlertService.swift */; };
 		0CDA9ED928E3584D00DB37F0 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDA9ED828E3584D00DB37F0 /* TestViewController.swift */; };
 		0CDC93DA28DB779F009E6E78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC93D928DB779F009E6E78 /* AppDelegate.swift */; };
 		0CDC93DC28DB779F009E6E78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC93DB28DB779F009E6E78 /* SceneDelegate.swift */; };
-		0CDC93DE28DB779F009E6E78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC93DD28DB779F009E6E78 /* ViewController.swift */; };
 		0CDC93E128DB779F009E6E78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CDC93DF28DB779F009E6E78 /* Main.storyboard */; };
 		0CDC93E328DB77A2009E6E78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CDC93E228DB77A2009E6E78 /* Assets.xcassets */; };
 		0CDC93E628DB77A2009E6E78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CDC93E428DB77A2009E6E78 /* LaunchScreen.storyboard */; };
@@ -48,28 +44,24 @@
 		0C177B9D28ED7DA60092A835 /* InformationDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDetailTableViewController.swift; sourceTree = "<group>"; };
 		0C234CE32903FCBA00BA08E3 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		0C234CE72904086C00BA08E3 /* ImageClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassifier.swift; sourceTree = "<group>"; };
-		0C234CF129040AC700BA08E3 /* SkinSkanTest.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SkinSkanTest.mlmodel; sourceTree = "<group>"; };
 		0C4E26E3291A5C5200F9C511 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
-		0C4E26E7291F964800F9C511 /* SkinSkanTest2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SkinSkanTest2.mlmodel; sourceTree = "<group>"; };
+		0C4E26E7291F964800F9C511 /* SkinSkanTest.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SkinSkanTest.mlmodel; sourceTree = "<group>"; };
 		0C4E26EC291FCE6200F9C511 /* SkinSkan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SkinSkan.xcdatamodel; sourceTree = "<group>"; };
 		0C7DD6E928EAC1250071AB78 /* Disease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disease.swift; sourceTree = "<group>"; };
-		0C81C05A2920269000F6FEA3 /* Prediction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Prediction+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0C81C05B2920269000F6FEA3 /* Prediction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Prediction+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0C81C0622921085C00F6FEA3 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		0C81C0642921169700F6FEA3 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		0C81C068292165EE00F6FEA3 /* Prediction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Prediction+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0C81C069292165EE00F6FEA3 /* Prediction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Prediction+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0C9DC15A28DC7A2900C49FD5 /* NearbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyCell.swift; sourceTree = "<group>"; };
-		0CA4D913290BF79900417FFF /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		0CA4D915290BFC5F00417FFF /* TableViewSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSections.swift; sourceTree = "<group>"; };
 		0CAC1C2028DD9D3E00AB3592 /* Dermatologist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dermatologist.swift; sourceTree = "<group>"; };
 		0CAC1C2228DDA1EC00AB3592 /* NearbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyViewController.swift; sourceTree = "<group>"; };
 		0CAC1C2428DDA93E00AB3592 /* NearbyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyDetailViewController.swift; sourceTree = "<group>"; };
 		0CAC1C2628DDADD900AB3592 /* NearbyDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyDetailCell.swift; sourceTree = "<group>"; };
-		0CD04CF428FEFBF90056AC18 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		0CDA9ED828E3584D00DB37F0 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		0CDC93D628DB779F009E6E78 /* SkinSkan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkinSkan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CDC93D928DB779F009E6E78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CDC93DB28DB779F009E6E78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0CDC93DD28DB779F009E6E78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0CDC93E028DB779F009E6E78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0CDC93E228DB77A2009E6E78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CDC93E528DB77A2009E6E78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -94,16 +86,45 @@
 		0C4E26E9291FCC8D00F9C511 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0C81C05A2920269000F6FEA3 /* Prediction+CoreDataClass.swift */,
-				0C81C05B2920269000F6FEA3 /* Prediction+CoreDataProperties.swift */,
-				0CD04CF428FEFBF90056AC18 /* AlertService.swift */,
+				0C4E26EB291FCE6200F9C511 /* SkinSkan.xcdatamodeld */,
+				0C81C068292165EE00F6FEA3 /* Prediction+CoreDataClass.swift */,
+				0C81C069292165EE00F6FEA3 /* Prediction+CoreDataProperties.swift */,
 				0CAC1C2028DD9D3E00AB3592 /* Dermatologist.swift */,
 				0C7DD6E928EAC1250071AB78 /* Disease.swift */,
 				0C234CE72904086C00BA08E3 /* ImageClassifier.swift */,
-				0CA4D913290BF79900417FFF /* ProfileHeader.swift */,
 				0CA4D915290BFC5F00417FFF /* TableViewSections.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0C81C06C2921661200F6FEA3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0C81C0642921169700F6FEA3 /* AboutViewController.swift */,
+				0C81C0622921085C00F6FEA3 /* FeedbackViewController.swift */,
+				0CDC93ED28DB7E80009E6E78 /* HomeViewController.swift */,
+				0CDC93F128DB814A009E6E78 /* InformationViewController.swift */,
+				0C177B9B28ED7D6D0092A835 /* InformationDetailViewController.swift */,
+				0C177B9D28ED7DA60092A835 /* InformationDetailTableViewController.swift */,
+				0CAC1C2228DDA1EC00AB3592 /* NearbyViewController.swift */,
+				0CAC1C2428DDA93E00AB3592 /* NearbyDetailViewController.swift */,
+				0CFDAF1628DDF86E00EAA5E5 /* NearbyDetailTableViewController.swift */,
+				0CDC93F528DB8182009E6E78 /* ProfileViewController.swift */,
+				0C234CE32903FCBA00BA08E3 /* ResultViewController.swift */,
+				0CDA9ED828E3584D00DB37F0 /* TestViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0C81C06D2921662900F6FEA3 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				0C9DC15A28DC7A2900C49FD5 /* NearbyCell.swift */,
+				0CAC1C2628DDADD900AB3592 /* NearbyDetailCell.swift */,
+				0C0178EB290810D700E37847 /* NearbyDetailImageCollectionViewCell.swift */,
+				0C4E26E3291A5C5200F9C511 /* ProfileCell.swift */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 		0CDC93CD28DB779F009E6E78 = {
@@ -125,33 +146,16 @@
 		0CDC93D828DB779F009E6E78 /* SkinSkan */ = {
 			isa = PBXGroup;
 			children = (
-				0C4E26E9291FCC8D00F9C511 /* Model */,
-				0CDC93E228DB77A2009E6E78 /* Assets.xcassets */,
-				0CDC93D928DB779F009E6E78 /* AppDelegate.swift */,
-				0CDC93DB28DB779F009E6E78 /* SceneDelegate.swift */,
 				0CDC93E728DB77A2009E6E78 /* Info.plist */,
+				0CDC93E228DB77A2009E6E78 /* Assets.xcassets */,
 				0CDC93E428DB77A2009E6E78 /* LaunchScreen.storyboard */,
 				0CDC93DF28DB779F009E6E78 /* Main.storyboard */,
-				0C234CF129040AC700BA08E3 /* SkinSkanTest.mlmodel */,
-				0C4E26E7291F964800F9C511 /* SkinSkanTest2.mlmodel */,
-				0C4E26EB291FCE6200F9C511 /* SkinSkan.xcdatamodeld */,
-				0C9DC15A28DC7A2900C49FD5 /* NearbyCell.swift */,
-				0CAC1C2628DDADD900AB3592 /* NearbyDetailCell.swift */,
-				0C0178EB290810D700E37847 /* NearbyDetailImageCollectionViewCell.swift */,
-				0C4E26E3291A5C5200F9C511 /* ProfileCell.swift */,
-				0C81C0622921085C00F6FEA3 /* FeedbackViewController.swift */,
-				0C81C0642921169700F6FEA3 /* AboutViewController.swift */,
-				0CDC93ED28DB7E80009E6E78 /* HomeViewController.swift */,
-				0CDC93F128DB814A009E6E78 /* InformationViewController.swift */,
-				0C177B9B28ED7D6D0092A835 /* InformationDetailViewController.swift */,
-				0C177B9D28ED7DA60092A835 /* InformationDetailTableViewController.swift */,
-				0CAC1C2228DDA1EC00AB3592 /* NearbyViewController.swift */,
-				0CAC1C2428DDA93E00AB3592 /* NearbyDetailViewController.swift */,
-				0CFDAF1628DDF86E00EAA5E5 /* NearbyDetailTableViewController.swift */,
-				0CDC93F528DB8182009E6E78 /* ProfileViewController.swift */,
-				0C234CE32903FCBA00BA08E3 /* ResultViewController.swift */,
-				0CDA9ED828E3584D00DB37F0 /* TestViewController.swift */,
-				0CDC93DD28DB779F009E6E78 /* ViewController.swift */,
+				0CDC93D928DB779F009E6E78 /* AppDelegate.swift */,
+				0CDC93DB28DB779F009E6E78 /* SceneDelegate.swift */,
+				0C4E26E7291F964800F9C511 /* SkinSkanTest.mlmodel */,
+				0C4E26E9291FCC8D00F9C511 /* Model */,
+				0C81C06D2921662900F6FEA3 /* TableViewCells */,
+				0C81C06C2921661200F6FEA3 /* ViewControllers */,
 			);
 			path = SkinSkan;
 			sourceTree = "<group>";
@@ -229,8 +233,6 @@
 			files = (
 				0C7DD6EA28EAC1250071AB78 /* Disease.swift in Sources */,
 				0C234CE42903FCBA00BA08E3 /* ResultViewController.swift in Sources */,
-				0C81C05D2920269000F6FEA3 /* Prediction+CoreDataProperties.swift in Sources */,
-				0CDC93DE28DB779F009E6E78 /* ViewController.swift in Sources */,
 				0CA4D916290BFC5F00417FFF /* TableViewSections.swift in Sources */,
 				0CDC93DA28DB779F009E6E78 /* AppDelegate.swift in Sources */,
 				0CAC1C2728DDADD900AB3592 /* NearbyDetailCell.swift in Sources */,
@@ -239,23 +241,21 @@
 				0C81C0632921085C00F6FEA3 /* FeedbackViewController.swift in Sources */,
 				0C177B9E28ED7DA60092A835 /* InformationDetailTableViewController.swift in Sources */,
 				0CDC93EE28DB7E80009E6E78 /* HomeViewController.swift in Sources */,
+				0C81C06A292165EE00F6FEA3 /* Prediction+CoreDataClass.swift in Sources */,
 				0CDA9ED928E3584D00DB37F0 /* TestViewController.swift in Sources */,
 				0CAC1C2528DDA93E00AB3592 /* NearbyDetailViewController.swift in Sources */,
-				0CA4D914290BF79900417FFF /* ProfileHeader.swift in Sources */,
 				0C9DC15B28DC7A2900C49FD5 /* NearbyCell.swift in Sources */,
 				0CFDAF1728DDF86E00EAA5E5 /* NearbyDetailTableViewController.swift in Sources */,
 				0C4E26E4291A5C5300F9C511 /* ProfileCell.swift in Sources */,
 				0C81C0652921169700F6FEA3 /* AboutViewController.swift in Sources */,
 				0C234CE82904086C00BA08E3 /* ImageClassifier.swift in Sources */,
 				0C0178EC290810D700E37847 /* NearbyDetailImageCollectionViewCell.swift in Sources */,
-				0C4E26E8291F964800F9C511 /* SkinSkanTest2.mlmodel in Sources */,
+				0C81C06B292165EE00F6FEA3 /* Prediction+CoreDataProperties.swift in Sources */,
+				0C4E26E8291F964800F9C511 /* SkinSkanTest.mlmodel in Sources */,
 				0CDC93F628DB8182009E6E78 /* ProfileViewController.swift in Sources */,
 				0CDC93F228DB814A009E6E78 /* InformationViewController.swift in Sources */,
-				0CD04CF528FEFBF90056AC18 /* AlertService.swift in Sources */,
 				0CAC1C2328DDA1EC00AB3592 /* NearbyViewController.swift in Sources */,
 				0CAC1C2128DD9D3E00AB3592 /* Dermatologist.swift in Sources */,
-				0C234CF229040AC700BA08E3 /* SkinSkanTest.mlmodel in Sources */,
-				0C81C05C2920269000F6FEA3 /* Prediction+CoreDataClass.swift in Sources */,
 				0C177B9C28ED7D6D0092A835 /* InformationDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,10 +407,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SkinSkan/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to the camera.";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app uses your location to personalize your app experience";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to personalize your app experience";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to the photo library.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires Camera access to obtain pictures for prediction.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app requires location services to obtain nearby dermatologists.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires location services to obtain nearby dermatologists.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires Photo Library access to obtain pictures for prediction.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -440,10 +440,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SkinSkan/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to the camera.";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app uses your location to personalize your app experience";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to personalize your app experience";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to the photo library.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires Camera access to obtain pictures for prediction.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app requires location services to obtain nearby dermatologists.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires location services to obtain nearby dermatologists.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires Photo Library access to obtain pictures for prediction.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

@@ -35,14 +35,15 @@ class NearbyDetailTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let expanded = detailTableData[section].expanded
         let button = UIButton(type: .system)
-        button.setTitle(expanded ? sectionLabels[section] + " Close" : sectionLabels[section] + " Open", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .yellow
+        button.setTitle(expanded ? sectionLabels[section] + " ---" : sectionLabels[section] + " +++", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
 
         button.addTarget(self, action: #selector(handleExpand), for: .touchUpInside)
 
         button.tag = section
+        button.layer.cornerRadius = 8
 
         return button
     }
@@ -57,7 +58,7 @@ class NearbyDetailTableViewController: UITableViewController {
         let expanded = detailTableData[section].expanded
         detailTableData[section].expanded = !expanded
         
-        button.setTitle(expanded ? sectionLabels[section] + " Open" : sectionLabels[section] + " Close", for: .normal)
+        button.setTitle(expanded ? sectionLabels[section] + " +++" : sectionLabels[section] + " ---", for: .normal)
         
         if expanded {
             tableView.deleteRows(at: indexPaths, with: .fade)
@@ -95,6 +96,7 @@ class NearbyDetailTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let section = indexPath.section
         
         switch section {
@@ -106,10 +108,6 @@ class NearbyDetailTableViewController: UITableViewController {
             default:
                 print("Default")
         }
-    }
-    
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
     }
 
     @objc func openMap() {
