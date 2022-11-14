@@ -39,6 +39,7 @@ class ProfileViewController: UIViewController {
         fetchPredictions()
     }
     
+    // MARK: Self-Defined Methods
     /// Method called to obtain test history data from Core Data
     func fetchPredictions() {
         do {
@@ -53,6 +54,15 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    /// Method called to dismiss the test history pop up
+    @objc func dismissPopUp() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    /// Displays the NearbyViewController by switching to the third tab (index 2)
+    func openNearbyTab() {
+        tabBarController?.selectedIndex = 2
+    }
 }
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
@@ -181,7 +191,11 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
                 /// Adds a top right Done bar button
                 vc.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissPopUp))
                 /// ResultViewController is configured with the selected Prediction object
-                vc.configure(predictionResult: testResults[indexPath.row])
+                /// Sets action for Find Dermatologist button to dismiss ResultViewController and show NearbyViewController
+                vc.configure(predictionResult: testResults[indexPath.row], findDermMethod: {
+                    self.dismissPopUp()
+                    self.openNearbyTab()
+                })
                 /// The title of the navigation bar in the ResultViewController is the datetime of the selected Prediction object
                 vc.title = dateFormatter.string(from: testResults[indexPath.row].datetime)
                 
@@ -212,14 +226,5 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
                 print("Nothing")
             }
         }
-    }
-    
-    /// Method called to dismiss the test history pop up
-    @objc func dismissPopUp() {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    func openNearbyTab() {
-        tabBarController?.selectedIndex = 2
     }
 }

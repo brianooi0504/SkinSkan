@@ -10,11 +10,16 @@ import UIKit
 
 /// View controller class to display prediction result using Prediction object
 class ResultViewController: UIViewController {
+    /// Typealias for void to void function type
+    typealias FindDermAction = () -> Void
+
     // MARK: Variables
     var predictionResult: Prediction?
     var predDiseaseIndex: Int?
     /// All disease information obtained from the static Diseases variable in InformationViewController
     let allDiseases = InformationViewController.diseases
+    /// Function to be called by the Find Dermatologist button
+    var findDermMethod: FindDermAction = { return }
     
     // MARK: IBOutlets
     /// References the image view and result text label
@@ -23,9 +28,9 @@ class ResultViewController: UIViewController {
     
     // MARK: IBActions
     /// For the Find Dermatologists button
-    /// Displays the NearbyViewController by switching to the third tab (index 2)
+    /// Calls the method initialized by either ProfileViewController or TestViewController
     @IBAction func findDermatologists(_ sender: Any) {
-        tabBarController?.selectedIndex = 2
+        findDermMethod()
     }
     
     /// For the Read More button
@@ -56,8 +61,9 @@ class ResultViewController: UIViewController {
     }
     
     /// Obtains prediction result information from TestViewController or ProfileViewController and configures the view controller
-    func configure(predictionResult: Prediction) {
+    func configure(predictionResult: Prediction, findDermMethod: @escaping FindDermAction) {
         self.predictionResult = predictionResult
+        self.findDermMethod = findDermMethod
     }
     
     // MARK: Self-Defined Functions

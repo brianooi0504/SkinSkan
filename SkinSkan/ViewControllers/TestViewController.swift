@@ -74,9 +74,12 @@ class TestViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 present(alert, animated: true, completion: nil)
             }
             /// Sets segue destination and passes the resultant Prediction object to the ResultViewController
+            /// Sets action for Find Dermatologist button to show NearbyViewController
             let destination = segue.destination as! ResultViewController
             if let predictionResult = self.predictionResult {
-                destination.configure(predictionResult: predictionResult)
+                destination.configure(predictionResult: predictionResult, findDermMethod: {
+                    destination.tabBarController?.selectedIndex = 2
+                })
             }
         }
     }
