@@ -414,7 +414,6 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires Camera access to obtain pictures for prediction.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app requires location services to obtain nearby dermatologists.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires location services to obtain nearby dermatologists.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires Photo Library access to obtain pictures for prediction.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -447,7 +446,6 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires Camera access to obtain pictures for prediction.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app requires location services to obtain nearby dermatologists.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires location services to obtain nearby dermatologists.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires Photo Library access to obtain pictures for prediction.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

@@ -214,7 +214,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    /// Method called to delete the test history pop up
+    /// Method called to dismiss the test history pop up
     @objc func dismissPopUp() {
         self.dismiss(animated: true, completion: nil)
     }

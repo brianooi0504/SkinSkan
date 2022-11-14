@@ -159,16 +159,8 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
             }
         }
         /// Adds photo library action option for user to pick image from
-        let galleryAction = UIAlertAction(title: "Photo Library", style: .default){ UIAlertAction in
-            let photoLibraryAuthorizationStatus = PHPhotoLibrary.authorizationStatus(for: .readWrite)
-            /// Checks photo library permissions
-            switch photoLibraryAuthorizationStatus {
-            case .notDetermined: self.requestPhotosPermission()
-            case .restricted, .denied: self.accessNeededAlert(appName: "Photo Library")
-            case .authorized, .limited: self.openGallery()
-            @unknown default:
-                fatalError("Unknown case for photo library authorization")
-            }
+        let galleryAction = UIAlertAction(title: "Photo Library", style: .default){_ in
+            self.openGallery()
         }
         /// Cancel action option to dismiss image picker selection
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel){
@@ -180,32 +172,6 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
         alert.addAction(cameraAction)
         alert.addAction(galleryAction)
         alert.addAction(cancelAction)
-    }
-    
-    // MARK: Privacy Permissions
-    /// Asks user for permission to access camera
-    /// If granted, opens the camera
-    func requestCameraPermission() {
-        AVCaptureDevice.requestAccess(for: .video, completionHandler: { granted in
-            if granted {
-                self.openCamera()
-            }
-        })
-    }
-    
-    /// Asks user for permission to access photo library
-    /// If granted fully, opens the photo library
-    func requestPhotosPermission() {
-        PHPhotoLibrary.requestAuthorization(for: .readWrite, handler:  {[unowned self] (status) in
-            if status == .authorized {
-                openGallery()
-            }
-            else if status == .limited {
-                PHPhotoLibrary.shared().presentLimitedLibraryPicker(from: viewController!)
-            }
-            else { return }
-            
-        })
     }
     
     /// Presents the camera as a popup on the main thread
@@ -230,7 +196,18 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
         }
     }
     
-    /// Displays an alert asking user to go to Settings page for the app to change permissions to camera or photo library
+    // MARK: Privacy Permissions
+    /// Asks user for permission to access camera
+    /// If granted, opens the camera
+    func requestCameraPermission() {
+        AVCaptureDevice.requestAccess(for: .video, completionHandler: { granted in
+            if granted {
+                self.openCamera()
+            }
+        })
+    }
+    
+    /// Displays an alert asking user to go to Settings page for the app to change permissions to camera
     func accessNeededAlert(appName: String) {
         guard let settingsAppURL = URL(string: UIApplication.openSettingsURLString),
                 UIApplication.shared.canOpenURL(settingsAppURL) else {
