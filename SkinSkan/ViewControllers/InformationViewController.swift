@@ -79,10 +79,9 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
         
         var imageView  = UIImageView(frame:CGRect(x: 0, y: 0, width: 100, height: 200))
         let image = InformationViewController.diseases[indexPath.row].images[0]
-        cell.backgroundColor = UIColor.clear
         imageView = UIImageView(image:image)
         imageView.contentMode = .scaleAspectFill
-        imageView.alpha = 0.5
+        imageView.alpha = 0.3
         cell.backgroundView = imageView
         cell.layer.cornerRadius = 8
         

@@ -99,6 +99,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configure(labelText: feedbackChoice?.description ?? "error", containsSwitch: false)
         }
         
+        /// Sets round corners for the cell
+        cell.layer.cornerRadius = 8
         return cell
     }
     
@@ -106,7 +108,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     /// Sets the header view for each TableView section
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
+        view.backgroundColor = UIColor(named: "MedMaroon")
 
         let title = UILabel()
         title.font = UIFont.boldSystemFont(ofSize: 16)

@@ -31,7 +31,7 @@ class InformationDetailTableViewController: UITableViewController {
         let button = UIButton(type: .system)
         button.setTitle(expanded ? sectionLabels[section] + " ---" : sectionLabels[section] + " +++", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
+        button.backgroundColor = UIColor(named: "MedMaroon")
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.addTarget(self, action: #selector(handleInfoExpand), for: .touchUpInside)
         button.tag = section
@@ -84,6 +84,7 @@ class InformationDetailTableViewController: UITableViewController {
             fatalError("Dequeue cell error")
         }
         cell.textLabel?.text = detailTableData[indexPath.section].info
+        cell.layer.cornerRadius = 8
         return cell
     }
     

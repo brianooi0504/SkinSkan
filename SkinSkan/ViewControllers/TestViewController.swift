@@ -52,7 +52,7 @@ class TestViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBAction func removeChosenPhoto() {
         self.chosenImage = nil
         self.choosePhotoButton.setBackgroundImage(nil, for: .normal)
-        self.choosePhotoButton.setTitle("Select Image", for: .normal)
+        self.choosePhotoButton.setTitle("Press to Select Image", for: .normal)
     }
     
     override func viewDidLoad() {

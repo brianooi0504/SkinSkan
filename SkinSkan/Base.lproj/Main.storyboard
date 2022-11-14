@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -23,15 +24,21 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="9rd-1K-64r">
                                 <rect key="frame" x="16" y="151" width="358" height="590"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0G-6I-W7l">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0G-6I-W7l">
                                         <rect key="frame" x="0.0" y="0.0" width="358" height="300"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="300" id="ccG-ci-UjG"/>
                                         </constraints>
-                                        <buttonConfiguration key="configuration" style="gray" imagePlacement="trailing" title="Start a test" imagePadding="105" cornerStyle="dynamic" titleAlignment="automatic">
-                                            <imageReference key="image" image="camera.fill" catalog="system" symbolScale="large"/>
-                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="40"/>
-                                            <color key="baseBackgroundColor" red="1" green="0.75329955722829456" blue="0.83867153042385145" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="40"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="86" maxY="0.0"/>
+                                        <state key="normal" title="Start a test">
+                                            <imageReference key="image" image="camera.fill" catalog="system" symbolScale="large" variableValue="1"/>
+                                        </state>
+                                        <buttonConfiguration key="configuration" style="gray" imagePlacement="trailing" title="Start a test" imagePadding="86" cornerStyle="small">
+                                            <imageReference key="image" image="camera.fill" catalog="system" symbolScale="large" variableValue="1"/>
+                                            <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="40"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" name="DarkMaroon"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <segue destination="lDU-1u-g7s" kind="show" identifier="TestSegue" id="DJW-KG-DFa"/>
@@ -40,9 +47,11 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zv-Tg-uWm">
                                         <rect key="frame" x="0.0" y="307" width="358" height="138"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" imagePlacement="trailing" title="See test history" imagePadding="115" cornerStyle="dynamic">
+                                        <buttonConfiguration key="configuration" style="gray" imagePlacement="trailing" title="See test history" imagePadding="110" cornerStyle="small">
                                             <imageReference key="image" image="doc.text.below.ecg.fill" catalog="system" symbolScale="large"/>
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="28"/>
+                                            <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="28"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" name="LightMaroon"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="showProfileVC:" destination="N2b-1O-12g" eventType="touchUpInside" id="EsQ-pe-KPt"/>
@@ -51,9 +60,11 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHn-Nx-tNR">
                                         <rect key="frame" x="0.0" y="452" width="358" height="138"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" imagePlacement="trailing" title="Read more on skin diseases" imagePadding="35" cornerStyle="dynamic">
+                                        <buttonConfiguration key="configuration" style="gray" imagePlacement="trailing" title="Read more on skin diseases" imagePadding="120" cornerStyle="small">
                                             <imageReference key="image" image="books.vertical.fill" catalog="system" symbolScale="large"/>
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
+                                            <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="27"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" name="LightMaroon"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="showInformationVC:" destination="N2b-1O-12g" eventType="touchUpInside" id="xSo-1T-jfs"/>
@@ -66,7 +77,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qb0-fa-Fhr"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="qb0-fa-Fhr" firstAttribute="bottom" secondItem="9rd-1K-64r" secondAttribute="bottom" constant="20" id="3xI-ok-vS0"/>
                             <constraint firstItem="9rd-1K-64r" firstAttribute="top" secondItem="qb0-fa-Fhr" secondAttribute="top" constant="8" id="Pgp-gP-Mtn"/>
@@ -101,6 +112,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Start Test" cornerStyle="medium" titleAlignment="center">
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="30"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.69803921570000005" green="0.44705882349999998" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="qot-Td-j3M" kind="show" identifier="ResultSegue" id="Q3k-4i-IgE"/>
@@ -114,6 +127,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" image="trash.fill" catalog="system" imagePlacement="trailing" title="Remove Image" imagePadding="10" cornerStyle="medium" titleAlignment="center">
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="16"/>
+                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" name="SpecialGray"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="removeChosenPhoto" destination="lDU-1u-g7s" eventType="touchUpInside" id="Fhu-k5-BUL"/>
@@ -121,27 +136,29 @@
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UwT-uU-wQg">
                                 <rect key="frame" x="28" y="151" width="334" height="334"/>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <color key="backgroundColor" name="DarkMaroon"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="UwT-uU-wQg" secondAttribute="height" multiplier="1:1" id="PVa-7E-h2p"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Select Image"/>
+                                <state key="normal" title="Press to Select Image">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="selectImageWithSender:" destination="lDU-1u-g7s" eventType="touchUpInside" id="ntK-hf-Mo5"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzo-gg-GMp">
-                                <rect key="frame" x="28" y="696.33333333333337" width="334" height="52.666666666666629"/>
-                                <string key="text">Disclaimer: This feature can detect only six different skin conditions. It serves as a reference and is not meant to replace medical professionals. If conditions are severe, please consult a doctor.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <rect key="frame" x="28" y="696" width="334" height="53"/>
+                                <string key="text">Disclaimer: This feature can detect only six different skin conditions. It serves as a reference and is not meant to replace medical professionals. Predictions may be inaccurate, if conditions are severe, please consult a doctor.</string>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9eX-hz-uTE"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2Gp-jP-gMz" firstAttribute="centerX" secondItem="gZX-TE-C0L" secondAttribute="centerX" id="3rR-qZ-e4c"/>
                             <constraint firstItem="9eX-hz-uTE" firstAttribute="trailing" secondItem="iUy-RJ-qB8" secondAttribute="trailing" constant="100" id="46P-PF-o00"/>
@@ -177,8 +194,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No image chosen!  Choose an image and try again!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Nh-ob-bPS">
-                                <rect key="frame" x="30" y="535.33333333333337" width="330" height="52.666666666666629"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <rect key="frame" x="30" y="535.66666666666663" width="330" height="53"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -199,7 +216,9 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="Find Dermatologists" imagePadding="9" titleAlignment="center">
                                             <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="medium"/>
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" name="LightMaroon"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="findDermatologists:" destination="qot-Td-j3M" eventType="touchUpInside" id="Vzd-0A-PTx"/>
@@ -213,6 +232,9 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" imagePlacement="trailing" title="Read More" imagePadding="12">
                                             <imageReference key="image" image="questionmark.bubble" catalog="system" symbolScale="medium"/>
+                                            <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" name="LightMaroon"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="readMoreInfo:" destination="qot-Td-j3M" eventType="touchUpInside" id="KUx-bE-5Az"/>
@@ -221,14 +243,14 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The top predictions are:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JT-NS-al4">
-                                <rect key="frame" x="30" y="504.99999999999994" width="330" height="20.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="30" y="505.00000000000006" width="330" height="20.666666666666686"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GAp-dL-goA"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="qJQ-YI-lp6" firstAttribute="leading" secondItem="GAp-dL-goA" secondAttribute="leading" constant="28" id="1Ck-Gf-An3"/>
                             <constraint firstItem="4JT-NS-al4" firstAttribute="top" secondItem="qJQ-YI-lp6" secondAttribute="bottom" constant="20" id="266-WK-kIr"/>
@@ -254,14 +276,21 @@
             </objects>
             <point key="canvasLocation" x="-300" y="-596.44549763033172"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="Maa-sh-AZq">
             <objects>
-                <tabBarController id="yPq-RC-67p" sceneMemberID="viewController">
+                <tabBarController id="yPq-RC-67p" customClass="TabBarViewController" customModule="SkinSkan" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SBp-O9-Jez">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <tabBarAppearance key="standardAppearance"/>
+                        <tabBarAppearance key="scrollEdgeAppearance"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" name="DarkTintMaroon"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="zQ2-eZ-sxf" kind="relationship" relationship="viewControllers" id="k2E-bY-6e3"/>
@@ -299,9 +328,9 @@
                                     <outlet property="delegate" destination="Q6K-OB-vqJ" id="YgY-Hm-cQm"/>
                                 </connections>
                             </mapView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XyV-83-d66">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XyV-83-d66">
                                 <rect key="frame" x="16" y="509" width="358" height="252"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NearbyCell" rowHeight="80" id="Ysa-IL-lCz" customClass="NearbyCell" customModule="SkinSkan" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="358" height="80"/>
@@ -310,53 +339,54 @@
                                             <rect key="frame" x="0.0" y="0.0" width="314" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clinic 1 sss" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVY-NB-AoS">
-                                                    <rect key="frame" x="0.0" y="5" width="63.666666666666664" height="48"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Clinic 1 sss" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVY-NB-AoS">
+                                                    <rect key="frame" x="8" y="5" width="218" height="48"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="48" id="PVI-Cc-3hr"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Closed" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pf0-Sx-spF">
-                                                    <rect key="frame" x="254" y="5" width="55" height="18"/>
+                                                    <rect key="frame" x="254" y="5" width="55" height="20.666666666666668"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="55" id="25j-aq-mvJ"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.8 ★" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dv-7f-CMd">
-                                                    <rect key="frame" x="269" y="58" width="40" height="17"/>
+                                                    <rect key="frame" x="269" y="57" width="40" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="7h2-MB-Fo5"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="500 metres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36r-IT-0Kd">
-                                                    <rect key="frame" x="0.0" y="57" width="259" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <rect key="frame" x="8" y="57" width="251" height="18"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="kVY-NB-AoS" firstAttribute="leading" secondItem="Ulk-9U-ize" secondAttribute="leading" id="79S-GC-owH"/>
+                                                <constraint firstItem="kVY-NB-AoS" firstAttribute="leading" secondItem="Ulk-9U-ize" secondAttribute="leading" constant="8" id="79S-GC-owH"/>
                                                 <constraint firstAttribute="trailing" secondItem="4dv-7f-CMd" secondAttribute="trailing" constant="5" id="94v-yp-u7c"/>
                                                 <constraint firstAttribute="bottom" secondItem="4dv-7f-CMd" secondAttribute="bottom" constant="5" id="9pp-KD-zSJ"/>
                                                 <constraint firstItem="kVY-NB-AoS" firstAttribute="top" secondItem="Ulk-9U-ize" secondAttribute="top" constant="5" id="I0s-3a-z5r"/>
                                                 <constraint firstAttribute="trailing" secondItem="Pf0-Sx-spF" secondAttribute="trailing" constant="5" id="N29-sW-OJi"/>
                                                 <constraint firstAttribute="bottom" secondItem="36r-IT-0Kd" secondAttribute="bottom" constant="5" id="hwp-4m-t23"/>
-                                                <constraint firstItem="36r-IT-0Kd" firstAttribute="leading" secondItem="Ulk-9U-ize" secondAttribute="leading" id="kOS-As-Jbt"/>
+                                                <constraint firstItem="36r-IT-0Kd" firstAttribute="leading" secondItem="Ulk-9U-ize" secondAttribute="leading" constant="8" id="kOS-As-Jbt"/>
                                                 <constraint firstItem="4dv-7f-CMd" firstAttribute="leading" secondItem="36r-IT-0Kd" secondAttribute="trailing" constant="10" id="rt4-gv-5DE"/>
                                                 <constraint firstItem="Pf0-Sx-spF" firstAttribute="top" secondItem="Ulk-9U-ize" secondAttribute="top" constant="5" id="wYL-I3-DFg"/>
                                                 <constraint firstItem="Pf0-Sx-spF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kVY-NB-AoS" secondAttribute="trailing" constant="10" id="zri-2Y-yfs"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="distanceLabel" destination="36r-IT-0Kd" id="7gA-36-G8f"/>
                                             <outlet property="openingLabel" destination="Pf0-Sx-spF" id="AqZ-iE-aWC"/>
@@ -372,7 +402,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kIt-Sq-BZS"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="kIt-Sq-BZS" firstAttribute="trailing" secondItem="XyV-83-d66" secondAttribute="trailing" constant="16" id="0Tv-6X-Xqf"/>
                             <constraint firstItem="XyV-83-d66" firstAttribute="bottom" secondItem="kIt-Sq-BZS" secondAttribute="bottom" id="4ez-W7-5Ea"/>
@@ -401,7 +431,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8x-8m-fAA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2485" y="373"/>
+            <point key="canvasLocation" x="2484.6153846153848" y="372.51184834123222"/>
         </scene>
         <!--Nearby Detail View Controller-->
         <scene sceneID="I5Q-6v-jzv">
@@ -416,7 +446,7 @@
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vWH-aV-lDN">
                                         <rect key="frame" x="0.0" y="0.0" width="358" height="268.66666666666669"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="MedMaroon"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vWH-aV-lDN" secondAttribute="height" multiplier="1:0.75" id="J83-kK-buo"/>
                                         </constraints>
@@ -478,7 +508,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5hx-QE-tT3"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wwv-y6-QON" firstAttribute="leading" secondItem="5hx-QE-tT3" secondAttribute="leading" constant="16" id="6Aw-Fe-nwi"/>
                             <constraint firstAttribute="bottomMargin" secondItem="wwv-y6-QON" secondAttribute="bottom" id="NaT-Dz-fW5"/>
@@ -499,10 +529,10 @@
         <scene sceneID="2Wg-qQ-0w7">
             <objects>
                 <tableViewController id="4Xx-GR-PM0" customClass="NearbyDetailTableViewController" customModule="SkinSkan" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="FUv-5C-cai">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="FUv-5C-cai">
                         <rect key="frame" x="0.0" y="0.0" width="358" height="442.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NearbyDetailCell" textLabel="XSX-Nj-UBE" style="IBUITableViewCellStyleDefault" id="fTs-15-wOQ" customClass="NearbyDetailCell" customModule="SkinSkan" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="358" height="48"/>
@@ -514,12 +544,13 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XSX-Nj-UBE">
                                             <rect key="frame" x="20" y="0.0" width="318" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -541,6 +572,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="xKy-BL-caL">
                         <rect key="frame" x="0.0" y="47" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="BackgroundColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -560,6 +592,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="XnP-AY-35m">
                         <rect key="frame" x="0.0" y="47" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="BackgroundColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -579,6 +612,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="8y9-jz-rE9">
                         <rect key="frame" x="0.0" y="47" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="BackgroundColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -598,6 +632,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="pzb-N9-y0w">
                         <rect key="frame" x="0.0" y="47" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="BackgroundColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -616,9 +651,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jnf-Iw-f4q">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jnf-Iw-f4q">
                                 <rect key="frame" x="16" y="91" width="358" height="670"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileCell" rowHeight="60" id="7If-ku-SH5" customClass="ProfileCell" customModule="SkinSkan" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="358" height="60"/>
@@ -628,8 +663,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjl-Ch-bTY">
-                                                    <rect key="frame" x="20" y="17.333333333333336" width="50" height="25.333333333333336"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <rect key="frame" x="20" y="16.333333333333329" width="52" height="27.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -644,6 +679,7 @@
                                                 <constraint firstItem="Tjl-Ch-bTY" firstAttribute="leading" secondItem="ae7-Lt-UIu" secondAttribute="leadingMargin" id="lx0-VE-x07"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="settingsLabel" destination="Tjl-Ch-bTY" id="WYe-De-kXl"/>
                                             <outlet property="switchControl" destination="nAE-l5-yxs" id="vxH-nH-i6M"/>
@@ -657,7 +693,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3h3-fe-uYc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3h3-fe-uYc" firstAttribute="bottom" secondItem="jnf-Iw-f4q" secondAttribute="bottom" id="7eL-hz-PgF"/>
                             <constraint firstItem="3h3-fe-uYc" firstAttribute="trailing" secondItem="jnf-Iw-f4q" secondAttribute="trailing" constant="16" id="9PM-pw-eKw"/>
@@ -683,7 +719,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tPT-eJ-ljz">
-                                <rect key="frame" x="28" y="192" width="334" height="408"/>
+                                <rect key="frame" x="28" y="199.66666666666663" width="334" height="408"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ihS-v0-hHy">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
@@ -706,15 +742,15 @@
                                     </textView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We appreciate any helpful feedback and comments. Please enter your information and send." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIo-E6-pTW">
-                                <rect key="frame" x="28" y="111" width="334" height="61"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We appreciate any helpful feedback and comments. Please enter your information and click send." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIo-E6-pTW">
+                                <rect key="frame" x="28" y="111" width="334" height="68.666666666666686"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rwE-vG-d89"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="rwE-vG-d89" firstAttribute="trailing" secondItem="tPT-eJ-ljz" secondAttribute="trailing" constant="28" id="A7u-Sg-hWA"/>
                             <constraint firstItem="rwE-vG-d89" firstAttribute="trailing" secondItem="OIo-E6-pTW" secondAttribute="trailing" constant="28" id="PuH-jh-TSp"/>
@@ -755,21 +791,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SkinSkan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpg-Hq-Ug8">
-                                <rect key="frame" x="150.66666666666666" y="111" width="89" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <rect key="frame" x="141" y="111" width="108" height="28"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBW-SW-6Lf">
-                                <rect key="frame" x="28" y="157.99999999999997" width="334" height="446.33333333333326"/>
-                                <string key="text">SkinSkan is designed to detect 6 different types of skin conditions:   - Eczema (Dermatitis) - Urticaria - Psoriasis - TInea corporis (Ringworm) - Vitiligo - Scabies  However, inaccuracies may persist, particularly when images:  - Include conditions not aforementioned - Do not include any skin conditions  SkinSkan serves only as a reference tool and is not meant to replace medical professionals.  If your conditions are severe, please consult a doctor.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="28" y="159.00000000000003" width="334" height="501.66666666666674"/>
+                                <string key="text">SkinSkan is designed to detect 6 different types of skin conditions:   - Eczema (Dermatitis) - Urticaria - Psoriasis - TInea corporis (Ringworm) - Vitiligo - Scabies  However, predictions may be inaccurate, particularly when images:  - Include conditions not aforementioned - Do not include any skin conditions  SkinSkan serves only as a reference tool and is not meant to replace medical professionals.  If your conditions are severe, please consult a doctor.</string>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HLw-83-jne"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="QBW-SW-6Lf" firstAttribute="top" secondItem="Vpg-Hq-Ug8" secondAttribute="bottom" constant="20" id="VQS-Ue-NTC"/>
                             <constraint firstItem="HLw-83-jne" firstAttribute="trailing" secondItem="QBW-SW-6Lf" secondAttribute="trailing" constant="28" id="grj-3q-wVJ"/>
@@ -798,6 +834,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="K7f-3o-w6v">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="BackgroundColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -816,9 +853,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DpB-qb-oAx">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DpB-qb-oAx">
                                 <rect key="frame" x="16" y="91" width="358" height="670"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" textLabel="K56-Zu-e6w" rowHeight="100" style="IBUITableViewCellStyleDefault" id="StD-Ep-9rc" customClass="InformationCell" customModule="SkinSkan" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="358" height="100"/>
@@ -830,12 +867,13 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K56-Zu-e6w">
                                                     <rect key="frame" x="20" y="0.0" width="267.66666666666669" height="100"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="HalfWhite"/>
                                         <connections>
                                             <segue destination="OPD-YO-bJW" kind="show" identifier="InformationDetailSegue" id="LKY-od-xoN"/>
                                         </connections>
@@ -848,7 +886,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SjX-dT-XIA"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="DpB-qb-oAx" firstAttribute="leading" secondItem="SjX-dT-XIA" secondAttribute="leading" constant="16" id="Icy-vn-MKn"/>
                             <constraint firstItem="SjX-dT-XIA" firstAttribute="trailing" secondItem="DpB-qb-oAx" secondAttribute="trailing" constant="16" id="etH-GF-ITc"/>
@@ -878,7 +916,7 @@
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Om8-Fb-kTt">
                                         <rect key="frame" x="0.0" y="0.0" width="358" height="268.66666666666669"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="MedMaroon"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Om8-Fb-kTt" secondAttribute="height" multiplier="1:0.75" id="Qqa-Tp-Mas"/>
                                         </constraints>
@@ -930,8 +968,8 @@
                                     </containerView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="QrL-zt-OUt" secondAttribute="bottom" id="97H-Aj-LRW"/>
                                     <constraint firstItem="QrL-zt-OUt" firstAttribute="leading" secondItem="Q4Y-dE-XSp" secondAttribute="leading" id="Atz-78-BfO"/>
+                                    <constraint firstItem="QrL-zt-OUt" firstAttribute="bottom" secondItem="Q4Y-dE-XSp" secondAttribute="bottomMargin" id="OMp-nW-OGa"/>
                                     <constraint firstAttribute="trailing" secondItem="QrL-zt-OUt" secondAttribute="trailing" id="OqY-kv-uLF"/>
                                     <constraint firstAttribute="trailing" secondItem="Om8-Fb-kTt" secondAttribute="trailing" id="WjL-uO-DRE"/>
                                     <constraint firstItem="Om8-Fb-kTt" firstAttribute="top" secondItem="Q4Y-dE-XSp" secondAttribute="top" id="dHu-Kp-cL2"/>
@@ -940,7 +978,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zsr-Am-M0u"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Zsr-Am-M0u" firstAttribute="trailing" secondItem="Q4Y-dE-XSp" secondAttribute="trailing" constant="16" id="LLg-eL-IKt"/>
                             <constraint firstItem="Q4Y-dE-XSp" firstAttribute="leading" secondItem="Zsr-Am-M0u" secondAttribute="leading" constant="16" id="a8E-YQ-8pZ"/>
@@ -961,10 +999,10 @@
         <scene sceneID="cVK-XL-z8B">
             <objects>
                 <tableViewController id="iQC-98-v1Q" customClass="InformationDetailTableViewController" customModule="SkinSkan" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="kQi-9R-NQj">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="kQi-9R-NQj">
                         <rect key="frame" x="0.0" y="0.0" width="358" height="393.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InformationDetailCell" textLabel="f43-Qe-uZZ" style="IBUITableViewCellStyleDefault" id="25Q-kS-NS9" customClass="InformationDetailCell" customModule="SkinSkan" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="358" height="48"/>
@@ -976,12 +1014,13 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f43-Qe-uZZ">
                                             <rect key="frame" x="20" y="0.0" width="318" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1002,6 +1041,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jei-pD-M5E">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="BackgroundColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1020,6 +1060,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Akh-Q2-vS1">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="BackgroundColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1031,6 +1072,7 @@
             <point key="canvasLocation" x="3654" y="-250"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="DarkTintMaroon"/>
     <resources>
         <image name="books.vertical.fill" catalog="system" width="128" height="110"/>
         <image name="camera.fill" catalog="system" width="128" height="93"/>
@@ -1041,14 +1083,32 @@
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="questionmark.bubble" catalog="system" width="128" height="110"/>
         <image name="trash.fill" catalog="system" width="119" height="128"/>
+        <namedColor name="BackgroundColor">
+            <color red="1" green="0.8901960784313725" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkMaroon">
+            <color red="0.69803921568627447" green="0.44705882352941179" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkTintMaroon">
+            <color red="0.60392156862745094" green="0.30196078431372547" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="HalfWhite">
+            <color red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LightMaroon">
+            <color red="0.83921568627450982" green="0.48627450980392156" blue="0.43137254901960786" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MedMaroon">
+            <color red="0.83921568627450982" green="0.48627450980392156" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SpecialGray">
+            <color white="0.66666666666666663" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBrownColor">
             <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -26,6 +26,7 @@
 		0CAC1C2328DDA1EC00AB3592 /* NearbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC1C2228DDA1EC00AB3592 /* NearbyViewController.swift */; };
 		0CAC1C2528DDA93E00AB3592 /* NearbyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC1C2428DDA93E00AB3592 /* NearbyDetailViewController.swift */; };
 		0CAC1C2728DDADD900AB3592 /* NearbyDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC1C2628DDADD900AB3592 /* NearbyDetailCell.swift */; };
+		0CB7000729226CD600B4CBD4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB7000629226CD600B4CBD4 /* TabBarViewController.swift */; };
 		0CDA9ED928E3584D00DB37F0 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDA9ED828E3584D00DB37F0 /* TestViewController.swift */; };
 		0CDC93DA28DB779F009E6E78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC93D928DB779F009E6E78 /* AppDelegate.swift */; };
 		0CDC93DC28DB779F009E6E78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC93DB28DB779F009E6E78 /* SceneDelegate.swift */; };
@@ -58,6 +59,7 @@
 		0CAC1C2228DDA1EC00AB3592 /* NearbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyViewController.swift; sourceTree = "<group>"; };
 		0CAC1C2428DDA93E00AB3592 /* NearbyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyDetailViewController.swift; sourceTree = "<group>"; };
 		0CAC1C2628DDADD900AB3592 /* NearbyDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyDetailCell.swift; sourceTree = "<group>"; };
+		0CB7000629226CD600B4CBD4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		0CDA9ED828E3584D00DB37F0 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		0CDC93D628DB779F009E6E78 /* SkinSkan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkinSkan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CDC93D928DB779F009E6E78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				0CFDAF1628DDF86E00EAA5E5 /* NearbyDetailTableViewController.swift */,
 				0CDC93F528DB8182009E6E78 /* ProfileViewController.swift */,
 				0C234CE32903FCBA00BA08E3 /* ResultViewController.swift */,
+				0CB7000629226CD600B4CBD4 /* TabBarViewController.swift */,
 				0CDA9ED828E3584D00DB37F0 /* TestViewController.swift */,
 			);
 			path = ViewControllers;
@@ -235,6 +238,7 @@
 				0C234CE42903FCBA00BA08E3 /* ResultViewController.swift in Sources */,
 				0CA4D916290BFC5F00417FFF /* TableViewSections.swift in Sources */,
 				0CDC93DA28DB779F009E6E78 /* AppDelegate.swift in Sources */,
+				0CB7000729226CD600B4CBD4 /* TabBarViewController.swift in Sources */,
 				0CAC1C2728DDADD900AB3592 /* NearbyDetailCell.swift in Sources */,
 				0CDC93DC28DB779F009E6E78 /* SceneDelegate.swift in Sources */,
 				0C4E26ED291FCE6200F9C511 /* SkinSkan.xcdatamodeld in Sources */,

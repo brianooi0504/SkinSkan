@@ -20,6 +20,11 @@ class InformationDetailViewController: UIViewController, UICollectionViewDelegat
         self.diseaseImages = disease.images
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.collectionView.layer.cornerRadius = 8
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "InformationDetailTableSegue" {
             let destination = segue.destination as! InformationDetailTableViewController
@@ -42,6 +47,7 @@ class InformationDetailViewController: UIViewController, UICollectionViewDelegat
         } else {
             cell.imageView.image = UIImage(named: "NoImages")
         }
+        cell.layer.cornerRadius = 8
         
         return cell
     }

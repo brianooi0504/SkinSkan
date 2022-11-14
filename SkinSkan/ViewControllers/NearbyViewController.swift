@@ -38,6 +38,7 @@ class NearbyViewController: UIViewController, UITableViewDataSource, UITableView
         }
         let currentDermatologist = dermatologists[indexPath.row]
         cell.configure(dermatologist: currentDermatologist)
+        cell.layer.cornerRadius = 8
         return cell
     }
     

@@ -37,7 +37,7 @@ class NearbyDetailTableViewController: UITableViewController {
         let button = UIButton(type: .system)
         button.setTitle(expanded ? sectionLabels[section] + " ---" : sectionLabels[section] + " +++", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
+        button.backgroundColor = UIColor(named: "MedMaroon")
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
 
         button.addTarget(self, action: #selector(handleExpand), for: .touchUpInside)
@@ -92,6 +92,7 @@ class NearbyDetailTableViewController: UITableViewController {
             fatalError("Dequeue cell error")
         }
         cell.textLabel?.text = detailTableData[indexPath.section].info
+        cell.layer.cornerRadius = 8
         return cell
     }
     
@@ -118,22 +119,22 @@ class NearbyDetailTableViewController: UITableViewController {
         let googleURL = "comgooglemaps://?daddr=\(latitude),\(longitude)&directionsmode=driving"
         let wazeURL = "waze://?ll=\(latitude),\(longitude)&navigate=yes"
 
+        let appleMapsItem = ("Apple Maps", URL(string: appleURL)!)
         let googleItem = ("Google Maps", URL(string:googleURL)!)
         let wazeItem = ("Waze", URL(string:wazeURL)!)
-        var installedNavigationApps = [("Apple Maps", URL(string:appleURL)!)]
-
-        if UIApplication.shared.canOpenURL(googleItem.1) {
-            installedNavigationApps.append(googleItem)
-        }
-
-        if UIApplication.shared.canOpenURL(wazeItem.1) {
-            installedNavigationApps.append(wazeItem)
-        }
+        
+        let navApps = [appleMapsItem, googleItem, wazeItem]
 
         let alert = UIAlertController(title: "Selection", message: "Select Navigation App", preferredStyle: .actionSheet)
-        for app in installedNavigationApps {
+        for app in navApps {
             let button = UIAlertAction(title: app.0, style: .default, handler: { _ in
-                UIApplication.shared.open(app.1, options: [:], completionHandler: nil)
+                UIApplication.shared.open(app.1, options: [:], completionHandler: {success in
+                    if !success {
+                        let alert = UIAlertController(title: "Oops!", message: "\(app.0) is not installed!", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in print("OK tap")}))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                })
             })
             alert.addAction(button)
         }
