@@ -13,7 +13,7 @@
 		0C234CE42903FCBA00BA08E3 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C234CE32903FCBA00BA08E3 /* ResultViewController.swift */; };
 		0C234CE82904086C00BA08E3 /* ImageClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C234CE72904086C00BA08E3 /* ImageClassifier.swift */; };
 		0C4E26E4291A5C5300F9C511 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4E26E3291A5C5200F9C511 /* ProfileCell.swift */; };
-		0C4E26E8291F964800F9C511 /* SkinSkanTest.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0C4E26E7291F964800F9C511 /* SkinSkanTest.mlmodel */; };
+		0C4E26E8291F964800F9C511 /* SkinSkanTest135.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0C4E26E7291F964800F9C511 /* SkinSkanTest135.mlmodel */; };
 		0C4E26ED291FCE6200F9C511 /* SkinSkan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C4E26EB291FCE6200F9C511 /* SkinSkan.xcdatamodeld */; };
 		0C7DD6EA28EAC1250071AB78 /* Disease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7DD6E928EAC1250071AB78 /* Disease.swift */; };
 		0C81C0632921085C00F6FEA3 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81C0622921085C00F6FEA3 /* FeedbackViewController.swift */; };
@@ -27,11 +27,12 @@
 		0CAC1C2528DDA93E00AB3592 /* NearbyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC1C2428DDA93E00AB3592 /* NearbyDetailViewController.swift */; };
 		0CAC1C2728DDADD900AB3592 /* NearbyDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC1C2628DDADD900AB3592 /* NearbyDetailCell.swift */; };
 		0CB7000729226CD600B4CBD4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB7000629226CD600B4CBD4 /* TabBarViewController.swift */; };
+		0CB7000A2922B7D200B4CBD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CDC93E228DB77A2009E6E78 /* Assets.xcassets */; };
+		0CB7000C2922C52100B4CBD4 /* SkinSkanTest80.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0CB7000B2922C52100B4CBD4 /* SkinSkanTest80.mlmodel */; };
 		0CDA9ED928E3584D00DB37F0 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDA9ED828E3584D00DB37F0 /* TestViewController.swift */; };
 		0CDC93DA28DB779F009E6E78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC93D928DB779F009E6E78 /* AppDelegate.swift */; };
 		0CDC93DC28DB779F009E6E78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC93DB28DB779F009E6E78 /* SceneDelegate.swift */; };
 		0CDC93E128DB779F009E6E78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CDC93DF28DB779F009E6E78 /* Main.storyboard */; };
-		0CDC93E328DB77A2009E6E78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CDC93E228DB77A2009E6E78 /* Assets.xcassets */; };
 		0CDC93E628DB77A2009E6E78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CDC93E428DB77A2009E6E78 /* LaunchScreen.storyboard */; };
 		0CDC93EE28DB7E80009E6E78 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC93ED28DB7E80009E6E78 /* HomeViewController.swift */; };
 		0CDC93F228DB814A009E6E78 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC93F128DB814A009E6E78 /* InformationViewController.swift */; };
@@ -46,7 +47,7 @@
 		0C234CE32903FCBA00BA08E3 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		0C234CE72904086C00BA08E3 /* ImageClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassifier.swift; sourceTree = "<group>"; };
 		0C4E26E3291A5C5200F9C511 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
-		0C4E26E7291F964800F9C511 /* SkinSkanTest.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SkinSkanTest.mlmodel; sourceTree = "<group>"; };
+		0C4E26E7291F964800F9C511 /* SkinSkanTest135.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SkinSkanTest135.mlmodel; sourceTree = "<group>"; };
 		0C4E26EC291FCE6200F9C511 /* SkinSkan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SkinSkan.xcdatamodel; sourceTree = "<group>"; };
 		0C7DD6E928EAC1250071AB78 /* Disease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disease.swift; sourceTree = "<group>"; };
 		0C81C0622921085C00F6FEA3 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 		0CAC1C2428DDA93E00AB3592 /* NearbyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyDetailViewController.swift; sourceTree = "<group>"; };
 		0CAC1C2628DDADD900AB3592 /* NearbyDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyDetailCell.swift; sourceTree = "<group>"; };
 		0CB7000629226CD600B4CBD4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		0CB7000B2922C52100B4CBD4 /* SkinSkanTest80.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SkinSkanTest80.mlmodel; path = SkinSkan/SkinSkanTest80.mlmodel; sourceTree = SOURCE_ROOT; };
 		0CDA9ED828E3584D00DB37F0 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		0CDC93D628DB779F009E6E78 /* SkinSkan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkinSkan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CDC93D928DB779F009E6E78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -155,7 +157,8 @@
 				0CDC93DF28DB779F009E6E78 /* Main.storyboard */,
 				0CDC93D928DB779F009E6E78 /* AppDelegate.swift */,
 				0CDC93DB28DB779F009E6E78 /* SceneDelegate.swift */,
-				0C4E26E7291F964800F9C511 /* SkinSkanTest.mlmodel */,
+				0C4E26E7291F964800F9C511 /* SkinSkanTest135.mlmodel */,
+				0CB7000B2922C52100B4CBD4 /* SkinSkanTest80.mlmodel */,
 				0C4E26E9291FCC8D00F9C511 /* Model */,
 				0C81C06D2921662900F6FEA3 /* TableViewCells */,
 				0C81C06C2921661200F6FEA3 /* ViewControllers */,
@@ -222,7 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CDC93E628DB77A2009E6E78 /* LaunchScreen.storyboard in Resources */,
-				0CDC93E328DB77A2009E6E78 /* Assets.xcassets in Resources */,
+				0CB7000A2922B7D200B4CBD4 /* Assets.xcassets in Resources */,
 				0CDC93E128DB779F009E6E78 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +242,7 @@
 				0CA4D916290BFC5F00417FFF /* TableViewSections.swift in Sources */,
 				0CDC93DA28DB779F009E6E78 /* AppDelegate.swift in Sources */,
 				0CB7000729226CD600B4CBD4 /* TabBarViewController.swift in Sources */,
+				0CB7000C2922C52100B4CBD4 /* SkinSkanTest80.mlmodel in Sources */,
 				0CAC1C2728DDADD900AB3592 /* NearbyDetailCell.swift in Sources */,
 				0CDC93DC28DB779F009E6E78 /* SceneDelegate.swift in Sources */,
 				0C4E26ED291FCE6200F9C511 /* SkinSkan.xcdatamodeld in Sources */,
@@ -255,7 +259,7 @@
 				0C234CE82904086C00BA08E3 /* ImageClassifier.swift in Sources */,
 				0C0178EC290810D700E37847 /* NearbyDetailImageCollectionViewCell.swift in Sources */,
 				0C81C06B292165EE00F6FEA3 /* Prediction+CoreDataProperties.swift in Sources */,
-				0C4E26E8291F964800F9C511 /* SkinSkanTest.mlmodel in Sources */,
+				0C4E26E8291F964800F9C511 /* SkinSkanTest135.mlmodel in Sources */,
 				0CDC93F628DB8182009E6E78 /* ProfileViewController.swift in Sources */,
 				0CDC93F228DB814A009E6E78 /* InformationViewController.swift in Sources */,
 				0CAC1C2328DDA1EC00AB3592 /* NearbyViewController.swift in Sources */,

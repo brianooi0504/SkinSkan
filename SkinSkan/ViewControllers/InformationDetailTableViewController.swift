@@ -41,7 +41,7 @@ class InformationDetailTableViewController: UITableViewController {
         let section = button.tag
         
         let indexPath = IndexPath(row: 0, section: section)
-        var indexPaths: [IndexPath] = [indexPath]
+        let indexPaths: [IndexPath] = [indexPath]
         
         /// Inverts the Expanded variable in the detailTableData entry
         let expanded = detailTableData[section].expanded
@@ -108,7 +108,7 @@ extension InformationDetailTableViewController {
         let button = UIButton(type: .system)
         button.setTitle(expanded ? sectionLabels[section] + " ---" : sectionLabels[section] + " +++", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = UIColor(named: "MedMaroon")
+        button.backgroundColor = UIColor(named: "DarkMaroon")
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         /// Calls handleInfoExpand method when selected to expand or collapse the TableView section
         button.addTarget(self, action: #selector(handleInfoExpand), for: .touchUpInside)

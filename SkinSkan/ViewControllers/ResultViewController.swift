@@ -37,9 +37,11 @@ class ResultViewController: UIViewController {
     /// Initializes a InformationDetailViewController and displays as a pop up for disease information
     @IBAction func readMoreInfo(_ sender: Any) {
         if let predDiseaseIndex = predDiseaseIndex {
+            /// Instantiate a InformationDetailViewController pop up
             guard let vc = storyboard?.instantiateViewController(withIdentifier: "InformationDetailViewController") as? InformationDetailViewController else { return }
-            
+            /// Adds a top right Done bar button
             vc.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissPopUp))
+            /// InformationDetailViewController is configured with the top predicted Disease object
             vc.configure(disease: allDiseases[predDiseaseIndex])
             let navController = UINavigationController(rootViewController: vc)
             present(navController, animated: true)

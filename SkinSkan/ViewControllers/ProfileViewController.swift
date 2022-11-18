@@ -118,7 +118,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     /// Sets the header view for each TableView section
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
-        view.backgroundColor = UIColor(named: "MedMaroon")
+        view.backgroundColor = UIColor(named: "DarkMaroon")
 
         let title = UILabel()
         title.font = UIFont.boldSystemFont(ofSize: 16)
@@ -187,6 +187,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             /// Initializes a ResultViewController and passes in the Prediction object
             /// Displays the ResultViewController as a pop up
             case .testHistory:
+                /// Instantiate a ResultViewController pop up
                 guard let vc = storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController else { return }
                 /// Adds a top right Done bar button
                 vc.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissPopUp))

@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import PhotosUI
 import AVFoundation
 
 /// View controller class for the page where user picks an image and is then passed to the image classification model
@@ -42,7 +41,8 @@ class TestViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         ImagePickerManager().pickImage(self){ image in
             self.chosenImage = image
             self.choosePhotoButton.setBackgroundImage(self.chosenImage, for: .normal)
-            self.choosePhotoButton.contentMode = .scaleAspectFill
+            self.choosePhotoButton.layoutIfNeeded()
+            self.choosePhotoButton.subviews.first?.contentMode = .scaleAspectFill
             self.choosePhotoButton.setTitle("", for: .normal)
         }
     }
